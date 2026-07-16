@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+*.csv
+
+# Large radar recordings
+*.npy
+
+# Old backups
+backup_old/
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini

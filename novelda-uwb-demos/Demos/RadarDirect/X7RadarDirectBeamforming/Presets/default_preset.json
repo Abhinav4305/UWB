@@ -1,0 +1,37 @@
+{
+    "IsLive": true,
+    "BA22FirmwarePath": "C:\\RR_02\\X7_SDK_0.6_x64-win\\firmware\\X7_Application_BA22_IC004_RadarDirect_config_6.11.5.app",
+    "PlaybackFile": "",
+    "DoRecording": false,
+    "RecordingDirectory": "",
+    "RecordingPrefix": "rec_",
+    "RadarSource": {
+        "FPS": "65.0",
+        "PulsePeriod": "12",
+        "MframesPerPulse": "6",
+        "PulsesPerIteration": "35",
+        "IterationsPerFrame": "6",
+        "TxPower": "3",
+        "InterleavedFrames": "5",
+        "TxChannelSequence": "{0u16, 1u16}",
+        "RxMaskSequence": "{3u16, 3u16}"
+    },
+    "BeamForming": {
+        "azBeamAngles": "{-90.0,-75.0,-60.0,-45.0,-30.0,-15.0,0.0,15.0,30.0,45.0,60.0,75.0,90.0}"
+    },
+    "StaticRemoval_IIR": {
+        "DCEstimationSmoothCoeff": "0.95"
+    },
+    "RadarDirectBeamPlottingParameters": {
+        "MaxBufferedFrames": "10000",
+        "PowerLimVec": "{-60.0,40.0}",
+        "RangeLimVec": "{0.0,3.0}",
+        "AngleLimVec": "{}",
+        "ColorMapRange": "{-60.0,30.0}",
+        "BeamSectorWidthDeg": "20.0",
+        "RangeSlicesToPlot": "{2.0}",
+        "AngleSlicesToPlot": "{0.0}",
+        "ThresholdAtRanges": "{0.2,2.0,5.0}",
+        "ThresholdValues": "{10.0,5.0,5.0}"
+    }
+}

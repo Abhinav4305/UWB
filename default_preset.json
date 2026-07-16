@@ -1,0 +1,29 @@
+{
+    "IsLive": true,
+    "BA22FirmwarePath": "C:\\RR_02/X7_SDK_0.6_x64-win\\firmware\\X7_Application_BA22_IC004_RadarDirect_config_6.11.5.app",
+    "PlaybackFile": "",
+    "DoRecording": false,
+    "RecordingDirectory": "",
+    "RecordingPrefix": "rec_",
+    "RangeDopplerRawChannels": {
+        "NumFramesInPD": "50",
+        "FramesBetweenPD": "25",
+        "FFTSize": "64",
+        "enableDCRemoval": "true"
+    },
+    "RadarSource": {
+        "FPS": "40.0",
+        "PulsePeriod": "12",
+        "MframesPerPulse": "6",
+        "PulsesPerIteration": "35",
+        "IterationsPerFrame": "6",
+        "TxPower": "3",
+        "InterleavedFrames": "5",
+        "TxChannelSequence": "{0u16, 1u16}",
+        "RxMaskSequence": "{3u16, 3u16}"
+    },
+    "RDPlottingParameters": {
+        "MaxBufferedFrames": "-1",
+        "ZLimVec": "{-60.0, 20.0}"
+    }
+}

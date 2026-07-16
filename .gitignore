@@ -1,0 +1,14 @@
+# Exclude virtual environments
+novelda-uwb-demos/Demos/.demos/
+.venv/
+venv/
+
+# Exclude Python compiled files
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+X7_SDK_0.6_x64-win/
+share/
+LibFT4222-v1.4.5/
+lib/
+bin/
