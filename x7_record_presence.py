@@ -117,14 +117,13 @@ def run_presence(args, radar):
     
     # 2. Occupancy
     print("\nSelect Occupancy:")
-    print("  [0] - 0 People (Empty Room)")
     print("  [1] - 1 Person")
     print("  [2] - 2 People")
     print("  [3] - 3 People")
     print("  [4] - 4 People")
     print("  [5] - 5 People")
     occ_choice = input("Enter choice (0-5): ")
-    if occ_choice not in ["0", "1", "2", "3", "4", "5"]: 
+    if occ_choice not in ["1", "2", "3", "4", "5"]: 
         print("Invalid choice. Defaulting to 1 Person.")
         occ_choice = "1"
     occ_str = f"{occ_choice}_people"
