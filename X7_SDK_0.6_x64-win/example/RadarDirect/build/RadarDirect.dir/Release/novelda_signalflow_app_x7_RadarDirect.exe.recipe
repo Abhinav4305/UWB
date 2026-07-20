@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\build\x64\release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\build\Release\ChipInterface.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\build\Release\novelda_signalflow_app_x7_RadarDirect.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

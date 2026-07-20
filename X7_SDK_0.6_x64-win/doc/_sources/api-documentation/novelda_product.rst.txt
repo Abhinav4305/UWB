@@ -1,0 +1,4 @@
+novelda_product.h
+=================
+
+.. doxygenfile:: novelda_product.h

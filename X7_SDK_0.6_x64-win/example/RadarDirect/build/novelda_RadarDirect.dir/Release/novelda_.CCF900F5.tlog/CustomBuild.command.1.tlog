@@ -1,0 +1,10 @@
+^C:\RR_02\X7_SDK_0.6_X64-WIN\EXAMPLE\RADARDIRECT\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/RR_02/X7_SDK_0.6_x64-win/example/RadarDirect -BC:/RR_02/X7_SDK_0.6_x64-win/example/RadarDirect/build --check-stamp-file C:/RR_02/X7_SDK_0.6_x64-win/example/RadarDirect/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

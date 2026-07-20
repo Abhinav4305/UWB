@@ -1,0 +1,4 @@
+novelda_chipinterface.h
+=======================
+
+.. doxygenfile:: novelda_chipinterface.h

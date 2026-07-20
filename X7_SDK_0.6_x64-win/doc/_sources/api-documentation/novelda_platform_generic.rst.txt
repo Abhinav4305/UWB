@@ -1,0 +1,4 @@
+novelda_platform_generic.h
+==========================
+
+.. doxygenfile:: novelda_platform_generic.h

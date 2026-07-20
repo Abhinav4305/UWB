@@ -1,0 +1,53 @@
+Novelda X7 SDK
+===============
+
+Introduction
+------------
+
+.. toctree::
+   :maxdepth: 1
+
+   README.md
+
+Product specifc information
+---------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   Product/RadarDirect/RadarDirect_description.md
+   Product/ULPP_Presence1D/ULPP_Presence1D_description.md
+   Product/ULPP_Presence2D/ULPP_Presence2D_description.md
+
+Platform specific information
+-----------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   Platform/zephyr/README_zephyr.md
+   Platform/generic/README_generic.md
+
+API
+===
+
+.. toctree::
+   :maxdepth: 1
+
+   api-documentation/novelda_chipinterface
+   api-documentation/ChipInterface
+   api-documentation/novelda_platform_generic
+   api-documentation/platform_zephyr_Regulatory
+   api-documentation/novelda_RadarDirect
+   api-documentation/novelda_ULPP_Presence1D
+   api-documentation/novelda_ULPP_Presence2D
+   api-documentation/novelda_product
+
+..
+   Existing pages currently not included in the doc
+
+.. toctree::
+   :hidden:
+
+   Platform/esp/README_esp.md
+   Product/Generator/Generator_description.md

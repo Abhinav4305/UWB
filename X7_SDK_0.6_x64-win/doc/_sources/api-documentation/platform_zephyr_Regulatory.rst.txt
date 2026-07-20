@@ -1,0 +1,4 @@
+platform_zephyr_Regulatory.h
+============================
+
+.. doxygenfile:: platform_zephyr_Regulatory.h

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="x64"/>
+	</Configurations>
+	<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3c57aa3e-4589-3a3e-b123-8fad1aa81af7" DefaultStartup="true">
+		<BuildDependency Project="ChipInterface.vcxproj"/>
+		<BuildDependency Project="RadarDirect.vcxproj"/>
+		<BuildDependency Project="RadarDirectPlayback.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="novelda_RadarDirect.vcxproj"/>
+		<BuildDependency Project="novelda_platform_genericRadarDirect.vcxproj"/>
+	</Project>
+	<Project Path="ChipInterface.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="a79e30bc-f28a-3a79-bd17-b916381c4297">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="INSTALL.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="8ce15362-2055-3157-bc49-9ceef4fc56a6">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="PACKAGE.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="54602cea-f56b-33b3-b0db-9fd9ccd3e70c">
+		<BuildDependency Project="ALL_BUILD.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="RadarDirect.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="8463615c-cc5d-36f8-93fd-3a5c319392ee">
+		<BuildDependency Project="ChipInterface.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="novelda_RadarDirect.vcxproj"/>
+		<BuildDependency Project="novelda_platform_genericRadarDirect.vcxproj"/>
+	</Project>
+	<Project Path="RadarDirectPlayback.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="cba8e07b-a7eb-3f62-ae2d-10d31da9ab44">
+		<BuildDependency Project="ChipInterface.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="novelda_RadarDirect.vcxproj"/>
+		<BuildDependency Project="novelda_platform_genericRadarDirect.vcxproj"/>
+	</Project>
+	<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="82b0e3ab-9788-39af-a75c-cc13d017507c"/>
+	<Project Path="novelda_RadarDirect.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ccf900f5-7899-3d18-acb9-f804a3d5ece1">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="novelda_platform_genericRadarDirect.vcxproj"/>
+	</Project>
+	<Project Path="novelda_platform_genericRadarDirect.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="d5a6fee5-b21b-3817-bf73-e8150723c01c">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+</Solution>

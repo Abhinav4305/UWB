@@ -1,0 +1,3 @@
+# Novelda Generator
+
+This example is using a fake generated signal to be able to test the basics without a real radar.

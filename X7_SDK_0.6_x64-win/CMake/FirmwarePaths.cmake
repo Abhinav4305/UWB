@@ -1,0 +1,6 @@
+set(FIRMWARE_PATH_RadarDirect_IC003 "X7_Application_BA22_IC003_RadarDirect_config_6.11.5.app")
+set(FIRMWARE_PATH_ULPP_Presence1D_IC003 "X7_Application_BA22_IC003_ULPP_Presence1D_config_6.11.5.app")
+set(FIRMWARE_PATH_ULPP_Presence2D_IC003 "X7_Application_BA22_IC003_ULPP_Presence2D_config_6.11.5.app")
+set(FIRMWARE_PATH_RadarDirect_IC004 "X7_Application_BA22_IC004_RadarDirect_config_6.11.5.app")
+set(FIRMWARE_PATH_ULPP_Presence1D_IC004 "X7_Application_BA22_IC004_ULPP_Presence1D_config_6.11.5.app")
+set(FIRMWARE_PATH_ULPP_Presence2D_IC004 "X7_Application_BA22_IC004_ULPP_Presence2D_config_6.11.5.app")

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/RR_02/X7_SDK_0.6_x64-win/example/RadarDirect/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

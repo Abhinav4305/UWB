@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\build\CMakeFiles\f8a1d91274a3212ed30ca0f0d1ae48fd\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{050D1091-ECF5-3BB7-BECB-4B042175FF93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

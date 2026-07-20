@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="192x192" href="../_static/cropped-NOVELDA-icon-192x192.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="../_static/cropped-NOVELDA-icon-32x32.png" type="image/png">
+    <title>novelda_product.h &#8212; NOVELDA IC documentation 0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b70b1b6f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api-documentation/novelda_product';</script>
+    <script src="../_static/js/custom.js?v=bb7c8fd7"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Novelda examples for ESP32S3" href="../Platform/esp/README_esp.html" />
+    <link rel="prev" title="novelda_ULPP_Presence2D.h" href="novelda_ULPP_Presence2D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/Novelda_logo_hvit_72_dpi.png" class="logo__image only-dark" alt="NOVELDA"/>
+    <img src="../_static/Novelda_logo_RGB_positiv_72_dpi.png" class="logo__image only-light pst-js-only" alt="NOVELDA"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">novelda_product.h</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="novelda-product-h">
+<h1>novelda_product.h<a class="headerlink" href="#novelda-product-h" title="Link to this heading">#</a></h1>
+<p>Common API for all product implementations. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.UNUSED">
+<span class="target" id="novelda__product_8h_1a86d500a34c624c2cae56bc25a31b12f3"></span><span class="sig-name descname"><span class="n"><span class="pre">UNUSED</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">x</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.UNUSED" title="Link to this definition">#</a><br /></dt>
+<dd><p>Macro for use on unused parameters to avoid compiler warnings. </p>
+<p>The macro makes it more clear that something is unsed than a direct cast to void. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_SUCCESS">
+<span class="target" id="novelda__product_8h_1ae4b31148ed9eed11135740f13102f9fd"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_SUCCESS</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_SUCCESS" title="Link to this definition">#</a><br /></dt>
+<dd><p>SUCCESS. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_FAILURE">
+<span class="target" id="novelda__product_8h_1aa30f32aaa44537e4ff9c5c9b24e89a11"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_FAILURE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_FAILURE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Unspecified failure. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_NOT_IMPLEMENTED">
+<span class="target" id="novelda__product_8h_1aa43216759e5d015ec188abd414405b9c"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_NOT_IMPLEMENTED</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_NOT_IMPLEMENTED" title="Link to this definition">#</a><br /></dt>
+<dd><p>Functionality not implemented. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_NULLPTR">
+<span class="target" id="novelda__product_8h_1a3ef604583a33915d2fd488e83d83a86a"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_NULLPTR</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_NULLPTR" title="Link to this definition">#</a><br /></dt>
+<dd><p>NULL pointer. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_INVALID_ARGUMENT">
+<span class="target" id="novelda__product_8h_1a1a410930724cb35b866adfe8a132d8d5"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_INVALID_ARGUMENT</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_INVALID_ARGUMENT" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid argument. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_FILE_ERROR">
+<span class="target" id="novelda__product_8h_1a1397402623e9b883f062a3c064f4bc90"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_FILE_ERROR</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_FILE_ERROR" title="Link to this definition">#</a><br /></dt>
+<dd><p>File related error. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_INVALID_FLOW_REF">
+<span class="target" id="novelda__product_8h_1a29fb8c073d72140c566ccce875e04fb7"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_INVALID_FLOW_REF</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_INVALID_FLOW_REF" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid flow reference. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_TX_CHANNEL_SEQUENCE">
+<span class="target" id="novelda__product_8h_1aef3ea6f0ef562f6ab6eec402b75c1c00"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_TX_CHANNEL_SEQUENCE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_TX_CHANNEL_SEQUENCE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid Tx channel sequence. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_RX_MASK_SEQUENCE">
+<span class="target" id="novelda__product_8h_1aa955efa53e91047a915271526583a5e5"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_RX_MASK_SEQUENCE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_RX_MASK_SEQUENCE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Invalid Rx mask sequence. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_FPS">
+<span class="target" id="novelda__product_8h_1a5842008bab02d7eab577c7bda6e1f066"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_FPS</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_FPS" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring FPS. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_DUTY_CYCLE">
+<span class="target" id="novelda__product_8h_1aefaa57a8b7a2e60730cd69350b70da8e"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_DUTY_CYCLE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_DUTY_CYCLE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring duty cycle. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_MAX_RANGE">
+<span class="target" id="novelda__product_8h_1ab693e2339b8efe71fec9211f4a18bb16"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_MAX_RANGE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_MAX_RANGE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring max range. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_SCALING_FACTOR">
+<span class="target" id="novelda__product_8h_1a9e5ab31e52f73752771a3511430535b7"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_SCALING_FACTOR</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_SCALING_FACTOR" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring scaling factor. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_ANTENNA_GAIN">
+<span class="target" id="novelda__product_8h_1aab6620ccc466c79b194eae1306b612a9"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_ANTENNA_GAIN</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_ANTENNA_GAIN" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring antenna gain. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_INTERLEAVING_MODE">
+<span class="target" id="novelda__product_8h_1a6bc3d7b7e7f197ad151066e07dc5375c"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_INTERLEAVING_MODE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_INTERLEAVING_MODE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring interleaving mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_PULSE_PERIOD">
+<span class="target" id="novelda__product_8h_1a139e4420a8cff9824f178418d907be69"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_PULSE_PERIOD</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_PULSE_PERIOD" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring pulse period. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_MFRAMES_PER_PULSE">
+<span class="target" id="novelda__product_8h_1a2985b63fb4ed9746676268ab9ff71dd3"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_MFRAMES_PER_PULSE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_MFRAMES_PER_PULSE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring mframes per pulse. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_PULSES_PER_ITERATION">
+<span class="target" id="novelda__product_8h_1a921ad8d40c1b9c48985d8da4495988b4"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_PULSES_PER_ITERATION</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_PULSES_PER_ITERATION" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring pulses per iteration. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_ITERATIONS_PER_FRAME">
+<span class="target" id="novelda__product_8h_1a035cb5f9e151a710f4081e1abac55d2a"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_ITERATIONS_PER_FRAME</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_ITERATIONS_PER_FRAME" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring iterations per frame. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_TX_POWER">
+<span class="target" id="novelda__product_8h_1a7563162db1085231c86616c916a96b24"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_TX_POWER</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_TX_POWER" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring Tx power. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_INTERLEAVED_FRAMES">
+<span class="target" id="novelda__product_8h_1a58e36c468d566d3d0ce51e20293060e3"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_INTERLEAVED_FRAMES</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_INTERLEAVED_FRAMES" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring interleaved frames. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_DETECTION_ZONE_XY_POINTS">
+<span class="target" id="novelda__product_8h_1a32f9994d8b2d50354f362275aee42dea"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_DETECTION_ZONE_XY_POINTS</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_DETECTION_ZONE_XY_POINTS" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring detection zone xy points. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_THRESHOLD_LEVEL_ADJUSTMENT_DB">
+<span class="target" id="novelda__product_8h_1a9b6b4f6375424ce007886ce01f99cd1e"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_THRESHOLD_LEVEL_ADJUSTMENT_DB</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_THRESHOLD_LEVEL_ADJUSTMENT_DB" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring threshold level adjustment db. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_CONFIDENCE_VALUES">
+<span class="target" id="novelda__product_8h_1adfd03173a6df85eb33d0d0d4083c2300"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_CONFIDENCE_VALUES</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_CONFIDENCE_VALUES" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring confidence values. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_MAX_NUM_DETECTIONS">
+<span class="target" id="novelda__product_8h_1a40c07f2ef6be73a79d6b6086da5eda5a"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_MAX_NUM_DETECTIONS</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_MAX_NUM_DETECTIONS" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring max number of detections. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_MAX_NUM_HUMAN_DETECTION_2D_OUTPUTS">
+<span class="target" id="novelda__product_8h_1ab1c4392af28651abd08555426df28671"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_MAX_NUM_HUMAN_DETECTION_2D_OUTPUTS</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_MAX_NUM_HUMAN_DETECTION_2D_OUTPUTS" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring max_num_human_detection_2d_outputs. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_ELEMENT_DISTANCE">
+<span class="target" id="novelda__product_8h_1abe4618fedc52d6271550933004d34731"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_ELEMENT_DISTANCE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_ELEMENT_DISTANCE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring element distance. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_IO_CONFIG">
+<span class="target" id="novelda__product_8h_1a2ff81607bdb93eb1d7af058498d3d48a"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_IO_CONFIG</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_IO_CONFIG" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring IO. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_RESET_X7">
+<span class="target" id="novelda__product_8h_1af9dded461bb8cc4445191d0494548b2d"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_RESET_X7</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_RESET_X7" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring X7 reset. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_DETECTION_ZONE">
+<span class="target" id="novelda__product_8h_1a9ca60fc708d98b060091ad7cf2f90bba"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_DETECTION_ZONE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_DETECTION_ZONE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring detection zone. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_MODE">
+<span class="target" id="novelda__product_8h_1aeab3fac335739000cfc7163e888d8717"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_MODE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_MODE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring mode. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_SYSTEM_CLOCK_SOURCE">
+<span class="target" id="novelda__product_8h_1a66d95b6755d353cc1c663c2d31cc0b11"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_SYSTEM_CLOCK_SOURCE</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_SYSTEM_CLOCK_SOURCE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring system clock source. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.PRODUCT_ERROR_STREAMING_TIMEOUT">
+<span class="target" id="novelda__product_8h_1a7a8e4d5bab3134333b9daf09ffed5025"></span><span class="sig-name descname"><span class="n"><span class="pre">PRODUCT_ERROR_STREAMING_TIMEOUT</span></span></span><a class="headerlink" href="#c.PRODUCT_ERROR_STREAMING_TIMEOUT" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error when configuring streaming timeout. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.VALIDATE_PRODUCT_CONFIGURATION">
+<span class="target" id="novelda__product_8h_1a46a26eec17804430770127662465e7e9"></span><span class="sig-name descname"><span class="n"><span class="pre">VALIDATE_PRODUCT_CONFIGURATION</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">sf_error</span></span>, <span class="n"><span class="pre">product_error</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.VALIDATE_PRODUCT_CONFIGURATION" title="Link to this definition">#</a><br /></dt>
+<dd><p>Helper macro for validating product configuration. </p>
+<p>Returns the specified error code if the signal flow error is not SFERR_SUCCESS. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv423novelda_product_error_t">
+<span id="_CPPv323novelda_product_error_t"></span><span id="_CPPv223novelda_product_error_t"></span><span id="novelda_product_error_t"></span><span class="target" id="novelda__product_8h_1a580bda5408a1049e0b247a387b14eb97"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">novelda_product_error_t</span></span></span><a class="headerlink" href="#_CPPv423novelda_product_error_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Error codes used in novelda products API. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411read_signalPK7uint8_t6size_t8uint32_t8uint32_tP13signal_info_t">
+<span id="_CPPv311read_signalPK7uint8_t6size_t8uint32_t8uint32_tP13signal_info_t"></span><span id="_CPPv211read_signalPK7uint8_t6size_t8uint32_t8uint32_tP13signal_info_t"></span><span id="read_signal__uint8_tCP.s.uint32_t.uint32_t.signal_info_tP"></span><span class="target" id="novelda__product_8h_1aa78524bf7d5cb7b917f2fd4923f62d44"></span><span class="n"><span class="pre">signalflow_error_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">read_signal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data_buffer</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">data_buffer_size</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">signal_semantic</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">array_semantic</span></span>, <a class="reference internal" href="#_CPPv413signal_info_t" title="signal_info_t"><span class="n"><span class="pre">signal_info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">signal</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411read_signalPK7uint8_t6size_t8uint32_t8uint32_tP13signal_info_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read signal from data buffer. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_buffer</strong> – The data buffer to read from. </p></li>
+<li><p><strong>data_buffer_size</strong> – The size of the data buffer in bytes. </p></li>
+<li><p><strong>signal_semantic</strong> – The semantic ID of the signal. </p></li>
+<li><p><strong>array_semantic</strong> – The semantic ID of the array. </p></li>
+<li><p><strong>signal</strong> – The signal to write to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SFERR_SUCCESS on success, otherwise an error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv413signal_info_t">
+<span id="_CPPv313signal_info_t"></span><span id="_CPPv213signal_info_t"></span><span id="signal_info_t"></span><span class="target" id="structsignal__info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">signal_info_t</span></span></span><a class="headerlink" href="#_CPPv413signal_info_t" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;novelda_product.h&gt;</em></div>
+<p>Information about a signal frame. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13signal_info_t8datatypeE">
+<span id="_CPPv3N13signal_info_t8datatypeE"></span><span id="_CPPv2N13signal_info_t8datatypeE"></span><span id="signal_info_t::datatype__signalflow_datatype_t"></span><span class="target" id="structsignal__info__t_1a7f8e329e242b1ea39c326a095d1bf5a7"></span><span class="n"><span class="pre">signalflow_datatype_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">datatype</span></span></span><a class="headerlink" href="#_CPPv4N13signal_info_t8datatypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The data type of the signal. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13signal_info_t5shapeE">
+<span id="_CPPv3N13signal_info_t5shapeE"></span><span id="_CPPv2N13signal_info_t5shapeE"></span><span id="signal_info_t::shape__uint16_tCP"></span><span class="target" id="structsignal__info__t_1abe4a9b9c9c5d8ee5f6b2bd428af1e545"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">shape</span></span></span><a class="headerlink" href="#_CPPv4N13signal_info_t5shapeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The shape of the signal, e.g. </p>
+<p>{2, 3} for a 2x3 matrix. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13signal_info_t10shape_sizeE">
+<span id="_CPPv3N13signal_info_t10shape_sizeE"></span><span id="_CPPv2N13signal_info_t10shape_sizeE"></span><span id="signal_info_t::shape_size__s"></span><span class="target" id="structsignal__info__t_1a3021826e9b04929da61f356caa1e46b1"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">shape_size</span></span></span><a class="headerlink" href="#_CPPv4N13signal_info_t10shape_sizeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The size of the shape array, e.g 2 for a 2x3 matrix. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13signal_info_t5arrayE">
+<span id="_CPPv3N13signal_info_t5arrayE"></span><span id="_CPPv2N13signal_info_t5arrayE"></span><span id="signal_info_t::array__uint8_tCP"></span><span class="target" id="structsignal__info__t_1a95de7b3653ef8076cd274346374c8739"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">array</span></span></span><a class="headerlink" href="#_CPPv4N13signal_info_t5arrayE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The array byte buffer. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13signal_info_t19array_element_countE">
+<span id="_CPPv3N13signal_info_t19array_element_countE"></span><span id="_CPPv2N13signal_info_t19array_element_countE"></span><span id="signal_info_t::array_element_count__s"></span><span class="target" id="structsignal__info__t_1a9a1139eb02e3bfc27b52c7be1ce9a5e5"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">array_element_count</span></span></span><a class="headerlink" href="#_CPPv4N13signal_info_t19array_element_countE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The number of elements in the array of type <a class="reference internal" href="#structsignal__info__t_1a7f8e329e242b1ea39c326a095d1bf5a7"><span class="std std-ref">datatype</span></a>. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv423novelda_product_error_t"><code class="docutils literal notranslate"><span class="pre">novelda_product_error_t</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv411read_signalPK7uint8_t6size_t8uint32_t8uint32_tP13signal_info_t"><code class="docutils literal notranslate"><span class="pre">read_signal()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv413signal_info_t"><code class="docutils literal notranslate"><span class="pre">signal_info_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N13signal_info_t8datatypeE"><code class="docutils literal notranslate"><span class="pre">signal_info_t::datatype</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N13signal_info_t5shapeE"><code class="docutils literal notranslate"><span class="pre">signal_info_t::shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N13signal_info_t10shape_sizeE"><code class="docutils literal notranslate"><span class="pre">signal_info_t::shape_size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N13signal_info_t5arrayE"><code class="docutils literal notranslate"><span class="pre">signal_info_t::array</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N13signal_info_t19array_element_countE"><code class="docutils literal notranslate"><span class="pre">signal_info_t::array_element_count</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, NOVELDA AS.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

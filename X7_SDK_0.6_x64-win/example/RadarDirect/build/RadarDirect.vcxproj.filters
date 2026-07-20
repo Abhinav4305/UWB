@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\platform_generic.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\novelda_signalflow_app_x7.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\RR_02\X7_SDK_0.6_x64-win\example\RadarDirect\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E2CAC648-4CDD-3748-966C-2F6A915E90A2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

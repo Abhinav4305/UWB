@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="192x192" href="../_static/cropped-NOVELDA-icon-192x192.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="../_static/cropped-NOVELDA-icon-32x32.png" type="image/png">
+    <title>novelda_chipinterface.h &#8212; NOVELDA IC documentation 0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b70b1b6f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api-documentation/novelda_chipinterface';</script>
+    <script src="../_static/js/custom.js?v=bb7c8fd7"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ChipInterface.h" href="ChipInterface.html" />
+    <link rel="prev" title="Novelda examples for Windows / Linux / Raspberry Pi" href="../Platform/generic/README_generic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/Novelda_logo_hvit_72_dpi.png" class="logo__image only-dark" alt="NOVELDA"/>
+    <img src="../_static/Novelda_logo_RGB_positiv_72_dpi.png" class="logo__image only-light pst-js-only" alt="NOVELDA"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">novelda_chipinterface.h</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="novelda-chipinterface-h">
+<h1>novelda_chipinterface.h<a class="headerlink" href="#novelda-chipinterface-h" title="Link to this heading">#</a></h1>
+<p>A common communication interface API for interfacing signal processing libraries provided by Novelda to the X4 and X7 hardware sensors. </p>
+<p>The chipinterface API is meant to simplify the integration of Novelda products into custom environments and is limited to general read/write transactions as well as 2 IO pins - one output for enabling the sensor and one input to detect interrupt events. Although it supports both I2C and SPI, only one variant is usually used per project. Therefore, integrators may focus on one interface for one specific sensor.</p>
+<p>The proposed workflow is as follows:</p>
+<p><ol class="arabic simple">
+<li><p>Add the provided high-level sensor library provided by Novelda into your project. You should see linker errors due to missing chipinterface functions.</p></li>
+<li><p>Find the missing functions below and implement them based upon the available documentation. Demo chipinterface implementations are available for the Zephyr OS and may serve as a blueprint.</p></li>
+<li><p>Always hook up a logic analyzer to the bus when testing your code. </p></li>
+</ol>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv421chipinterface_error_t">
+<span id="_CPPv321chipinterface_error_t"></span><span id="_CPPv221chipinterface_error_t"></span><span id="chipinterface_error_t"></span><span class="target" id="novelda__chipinterface_8h_1acf357ad8f71e17b7c9878c359546754a"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">int8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_error_t</span></span></span><a class="headerlink" href="#_CPPv421chipinterface_error_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Status code returned by most of the chipinterface functions. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="novelda__chipinterface_8h_1a8030e4a392b11a18ef36576757cf7518"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv431chipinterface_interrupt_state_t" title="chipinterface_interrupt_state_t"><span class="n"><span class="pre">chipinterface_interrupt_state_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_interrupt_state_t</span></span></span><br /></dt>
+<dd><p>The current level of the interrupt line. </p>
+<p>The interrupt line can either be asserted or deasserted. Asserted usually means “high” while deasserted means “low”.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1a8b447903c9a23d34ff2bcb53918045c1"><span class="std std-ref">chipinterface_get_interrupt_state</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="novelda__chipinterface_8h_1ac31ad61534ce84e0ca45afd903dfe5ed"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv424chipinterface_polarity_t" title="chipinterface_polarity_t"><span class="n"><span class="pre">chipinterface_polarity_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_polarity_t</span></span></span><br /></dt>
+<dd><p>Clock polarity (CPOL) for SPI communication. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="novelda__chipinterface_8h_1aacf17fec3661b2f70fef32dd40a86e77"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv421chipinterface_phase_t" title="chipinterface_phase_t"><span class="n"><span class="pre">chipinterface_phase_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_phase_t</span></span></span><br /></dt>
+<dd><p>Clock phase (CPHA) for SPI communication. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp">
+<span class="target" id="novelda__chipinterface_8h_1a0054b5bfb4cd3865ec33ac9954ef2c43"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv424chipinterface_bitorder_t" title="chipinterface_bitorder_t"><span class="n"><span class="pre">chipinterface_bitorder_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_bitorder_t</span></span></span><br /></dt>
+<dd><p>Bit order for SPI communication. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv426chipinterface_spi_config_t">
+<span id="_CPPv326chipinterface_spi_config_t"></span><span id="_CPPv226chipinterface_spi_config_t"></span><span id="chipinterface_spi_config_t"></span><span class="target" id="novelda__chipinterface_8h_1aca1a54abbc5cf5ef225fbd6c24ae4a71"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv426chipinterface_spi_config_t" title="chipinterface_spi_config_t"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></span><a class="headerlink" href="#_CPPv426chipinterface_spi_config_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI clock configuration to be used for the connection. </p>
+<p>Novelda X4 and X7 sensors require a different SPI clock configuration. Novelda provides default values for their sensors.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x4_spi_config </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x7_spi_config </p>
+</div>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv431chipinterface_interrupt_state_t">
+<span id="_CPPv331chipinterface_interrupt_state_t"></span><span id="_CPPv231chipinterface_interrupt_state_t"></span><span class="target" id="novelda__chipinterface_8h_1af8d3cdd0d689d629b34150d34da27e03"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_interrupt_state_t</span></span></span><a class="headerlink" href="#_CPPv431chipinterface_interrupt_state_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>The current level of the interrupt line. </p>
+<p>The interrupt line can either be asserted or deasserted. Asserted usually means “high” while deasserted means “low”.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1a8b447903c9a23d34ff2bcb53918045c1"><span class="std std-ref">chipinterface_get_interrupt_state</span></a></p>
+</div>
+</p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N31chipinterface_interrupt_state_t32chipinterface_interrupt_assertedE">
+<span id="_CPPv3N31chipinterface_interrupt_state_t32chipinterface_interrupt_assertedE"></span><span id="_CPPv2N31chipinterface_interrupt_state_t32chipinterface_interrupt_assertedE"></span><span class="target" id="novelda__chipinterface_8h_1af8d3cdd0d689d629b34150d34da27e03ac45360c8bf1eb5fbbb5bd8913e2667ba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_interrupt_asserted</span></span></span><a class="headerlink" href="#_CPPv4N31chipinterface_interrupt_state_t32chipinterface_interrupt_assertedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The interrupt line is asserted. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N31chipinterface_interrupt_state_t34chipinterface_interrupt_deassertedE">
+<span id="_CPPv3N31chipinterface_interrupt_state_t34chipinterface_interrupt_deassertedE"></span><span id="_CPPv2N31chipinterface_interrupt_state_t34chipinterface_interrupt_deassertedE"></span><span class="target" id="novelda__chipinterface_8h_1af8d3cdd0d689d629b34150d34da27e03a184ef8f004d32618c85a5446635b52e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_interrupt_deasserted</span></span></span><a class="headerlink" href="#_CPPv4N31chipinterface_interrupt_state_t34chipinterface_interrupt_deassertedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The interrupt line is deasserted. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_polarity_t">
+<span id="_CPPv324chipinterface_polarity_t"></span><span id="_CPPv224chipinterface_polarity_t"></span><span class="target" id="novelda__chipinterface_8h_1af85d3e32f884e1606dc2642543e22115"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_polarity_t</span></span></span><a class="headerlink" href="#_CPPv424chipinterface_polarity_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock polarity (CPOL) for SPI communication. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24chipinterface_polarity_t26chipinterface_polarity_lowE">
+<span id="_CPPv3N24chipinterface_polarity_t26chipinterface_polarity_lowE"></span><span id="_CPPv2N24chipinterface_polarity_t26chipinterface_polarity_lowE"></span><span class="target" id="novelda__chipinterface_8h_1af85d3e32f884e1606dc2642543e22115a96eba7f9eb453e7cc381a6124dbfb4fa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_polarity_low</span></span></span><a class="headerlink" href="#_CPPv4N24chipinterface_polarity_t26chipinterface_polarity_lowE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The clock signal idles at the logical low voltage (CPOL = 0). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24chipinterface_polarity_t27chipinterface_polarity_highE">
+<span id="_CPPv3N24chipinterface_polarity_t27chipinterface_polarity_highE"></span><span id="_CPPv2N24chipinterface_polarity_t27chipinterface_polarity_highE"></span><span class="target" id="novelda__chipinterface_8h_1af85d3e32f884e1606dc2642543e22115adc7502ebc6e479b6f775f49d4654002c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_polarity_high</span></span></span><a class="headerlink" href="#_CPPv4N24chipinterface_polarity_t27chipinterface_polarity_highE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The clock signal idles at the logical high voltage (CPOL = 1). </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv421chipinterface_phase_t">
+<span id="_CPPv321chipinterface_phase_t"></span><span id="_CPPv221chipinterface_phase_t"></span><span class="target" id="novelda__chipinterface_8h_1ab76e211509cdb77c5861f5fcb0b1bf6c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_phase_t</span></span></span><a class="headerlink" href="#_CPPv421chipinterface_phase_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock phase (CPHA) for SPI communication. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N21chipinterface_phase_t27chipinterface_phase_leadingE">
+<span id="_CPPv3N21chipinterface_phase_t27chipinterface_phase_leadingE"></span><span id="_CPPv2N21chipinterface_phase_t27chipinterface_phase_leadingE"></span><span class="target" id="novelda__chipinterface_8h_1ab76e211509cdb77c5861f5fcb0b1bf6ca3952c428ebc6278f3a5319fa958ffce3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_phase_leading</span></span></span><a class="headerlink" href="#_CPPv4N21chipinterface_phase_t27chipinterface_phase_leadingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The first data bit is outputted immediately when CS activates. </p>
+<p>Subsequent bits are outputted when SCLK transitions to its idle voltage level. Sampling occurs when SCLK transitions from its idle voltage level (CPHA = 0). </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N21chipinterface_phase_t28chipinterface_phase_trailingE">
+<span id="_CPPv3N21chipinterface_phase_t28chipinterface_phase_trailingE"></span><span id="_CPPv2N21chipinterface_phase_t28chipinterface_phase_trailingE"></span><span class="target" id="novelda__chipinterface_8h_1ab76e211509cdb77c5861f5fcb0b1bf6ca88ccfedb149ab86aaf29a183908130ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_phase_trailing</span></span></span><a class="headerlink" href="#_CPPv4N21chipinterface_phase_t28chipinterface_phase_trailingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The first data bit is outputted on SCLK’s first clock edge after CS activates. </p>
+<p>Subsequent bits are outputted when SCLK transitions from its idle voltage level. Sampling occurs when SCLK transitions to its idle voltage level (CPHA = 1). </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_bitorder_t">
+<span id="_CPPv324chipinterface_bitorder_t"></span><span id="_CPPv224chipinterface_bitorder_t"></span><span class="target" id="novelda__chipinterface_8h_1a38fe72605652ff1f6bcbff792abde867"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_bitorder_t</span></span></span><a class="headerlink" href="#_CPPv424chipinterface_bitorder_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bit order for SPI communication. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_msbE">
+<span id="_CPPv3N24chipinterface_bitorder_t26chipinterface_bitorder_msbE"></span><span id="_CPPv2N24chipinterface_bitorder_t26chipinterface_bitorder_msbE"></span><span class="target" id="novelda__chipinterface_8h_1a38fe72605652ff1f6bcbff792abde867a1f8a4077e0a7b1a057cc67bf14e0a2ff"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_bitorder_msb</span></span></span><a class="headerlink" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_msbE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The most significant bit (MSB) is outputted first on the bus. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE">
+<span id="_CPPv3N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE"></span><span id="_CPPv2N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE"></span><span class="target" id="novelda__chipinterface_8h_1a38fe72605652ff1f6bcbff792abde867a25f02a8d29d119d07d3ca1c9674eeb48"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_bitorder_lsb</span></span></span><a class="headerlink" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The least significant bit (LSB) is first outputted to the bus. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv430chipinterface_set_chip_enabledb">
+<span id="_CPPv330chipinterface_set_chip_enabledb"></span><span id="_CPPv230chipinterface_set_chip_enabledb"></span><span id="chipinterface_set_chip_enabled__b"></span><span class="target" id="novelda__chipinterface_8h_1af7073b4b7e8edb245d548394747a17cf"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_set_chip_enabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430chipinterface_set_chip_enabledb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enables and disables the sensor. </p>
+<p>On the X4 this function controls the Enable pin. On the X7 this function controls the Reset pin. On both ICs the signal goes high when the sensor is enabled/running and low when the sensor is disabled/reset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enabled</strong> – true if the sensor should be enabled, otherwise false </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421chipinterface_wait_us8uint32_t">
+<span id="_CPPv321chipinterface_wait_us8uint32_t"></span><span id="_CPPv221chipinterface_wait_us8uint32_t"></span><span id="chipinterface_wait_us__uint32_t"></span><span class="target" id="novelda__chipinterface_8h_1ab80539d6881a4ed65153ec7a09a1c556"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_wait_us</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421chipinterface_wait_us8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Waits for a specified period in microseconds. </p>
+<p>This function is called whenever the X4/7 drivers need to wait for the sensor. The underlying implementation is free to do whatever while waiting. It may yield the current thread or bring the whole system into a sleep mode or just busy-wait.</p>
+<p>The actual time may not exactly match the desired period, but it must be at least as long as specified. Longer wait times will prolong the firmware upload, but the sensor will still work. Most of the time, this function is called with rather small values below 1000 microseconds. For wait times below the available tick resolution, consider to implement a busy-wait loop.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – the timespan to wait in microseconds </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv435chipinterface_get_time_microsecondsP8uint32_t">
+<span id="_CPPv335chipinterface_get_time_microsecondsP8uint32_t"></span><span id="_CPPv235chipinterface_get_time_microsecondsP8uint32_t"></span><span id="chipinterface_get_time_microseconds__uint32_tP"></span><span class="target" id="novelda__chipinterface_8h_1a1c3c5f2a61a1281ea93d8561d2d3b35b"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_get_time_microseconds</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435chipinterface_get_time_microsecondsP8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Determines the elapsed time in microseconds. </p>
+<p>In order to achieve a correct frame rate and when no interrupt is used, the elapsed time must be monitored. This function writes a monotonic increasing counter value into the output parameter <code class="docutils literal notranslate"><span class="pre">microseconds</span></code>. The timestamps may wrap around.</p>
+<p>It is enough if the underlying implementation to provide a resolution of 1 ms, but it should not be less.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – the current time stamp in microseconds </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_create_i2c8uint32_t7uint8_t">
+<span id="_CPPv324chipinterface_create_i2c8uint32_t7uint8_t"></span><span id="_CPPv224chipinterface_create_i2c8uint32_t7uint8_t"></span><span id="chipinterface_create_i2c__uint32_t.uint8_t"></span><span class="target" id="novelda__chipinterface_8h_1ab48e14591f6dd08d48d3393dcdfac731"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_create_i2c</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">slave_address</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424chipinterface_create_i2c8uint32_t7uint8_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initializes the interface for I2C communication. </p>
+<p>This function initializes the hardware interface and gets it ready for communication. When using I2C this is the first function called by the Novelda driver and should be used to initialize other required hardware drivers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequencyHz</strong> – the I2C clock frequency </p></li>
+<li><p><strong>slave_address</strong> – the address of the X4/X7 chip</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_delete_i2cv">
+<span id="_CPPv324chipinterface_delete_i2cv"></span><span id="_CPPv224chipinterface_delete_i2cv"></span><span id="chipinterface_delete_i2c"></span><span class="target" id="novelda__chipinterface_8h_1ab9221bd769f9a2249ec74e1df9288f49"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_delete_i2c</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424chipinterface_delete_i2cv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Deinitializes the chipinterface. </p>
+<p>This function should free up any resources acquired by chipinterface_create_i2c.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422chipinterface_read_i2cP7uint8_t6size_t">
+<span id="_CPPv322chipinterface_read_i2cP7uint8_t6size_t"></span><span id="_CPPv222chipinterface_read_i2cP7uint8_t6size_t"></span><span id="chipinterface_read_i2c__uint8_tP.s"></span><span class="target" id="novelda__chipinterface_8h_1a9fa131cdf3739575d3b3523f4a6cfe73"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_read_i2c</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422chipinterface_read_i2cP7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reads data from the sensor via I2C. </p>
+<p>This function reads data from the sensor hardware via I2C and stores to the buffer pointed to by <code class="docutils literal notranslate"><span class="pre">data</span></code>. That buffer is guaranteed to be <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes large. The IO configuration has been set in chipinterface_create_i2c.</p>
+<p>The implementation may read from the sensor in chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – pointer to the internal buffer </p></li>
+<li><p><strong>size</strong> – number of bytes to read </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423chipinterface_write_i2cPK7uint8_t6size_t">
+<span id="_CPPv323chipinterface_write_i2cPK7uint8_t6size_t"></span><span id="_CPPv223chipinterface_write_i2cPK7uint8_t6size_t"></span><span id="chipinterface_write_i2c__uint8_tCP.s"></span><span class="target" id="novelda__chipinterface_8h_1a52c4b3ebc7c23c746287f073cab4e268"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_write_i2c</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423chipinterface_write_i2cPK7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Writes data to the sensor via I2C. </p>
+<p>This function writes <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes provided in the <code class="docutils literal notranslate"><span class="pre">data</span></code> buffer to the sensor hardware via I2C. The actual write may happen in chunks. The IO configuration has been set in chipinterface_create_i2c.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – pointer to the buffer containing the data to write </p></li>
+<li><p><strong>size</strong> – number of bytes to write </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_create_spi8uint32_tPK26chipinterface_spi_config_t">
+<span id="_CPPv324chipinterface_create_spi8uint32_tPK26chipinterface_spi_config_t"></span><span id="_CPPv224chipinterface_create_spi8uint32_tPK26chipinterface_spi_config_t"></span><span id="chipinterface_create_spi__uint32_t.chipinterface_spi_config_tCP"></span><span class="target" id="novelda__chipinterface_8h_1a0904bc6ab29a3378ecfe62e4a2470a46"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_create_spi</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv426chipinterface_spi_config_t" title="chipinterface_spi_config_t"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">configuration</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424chipinterface_create_spi8uint32_tPK26chipinterface_spi_config_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Initializes the interface for SPI communication. </p>
+<p>This function initializes the hardware interface and gets it ready for communication. When using SPI this is the first function called by the Novelda driver and should be used to initialize other required hardware drivers.</p>
+<p>
+The configuration object is a temporary argument. When needed by the chip interface implementation beyond this function call, the implementation must store an internal copy of the object.</p>
+<p>The chip interface implementation may be tailored towards either X4 or X7 and is thus free to ignore frequencyHz and configuration entirely.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x4_spi_config </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x7_spi_config</p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequencyHz</strong> – the SPI clock frequency </p></li>
+<li><p><strong>configuration</strong> – a pointer to a valid clock configuration object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424chipinterface_delete_spiv">
+<span id="_CPPv324chipinterface_delete_spiv"></span><span id="_CPPv224chipinterface_delete_spiv"></span><span id="chipinterface_delete_spi"></span><span class="target" id="novelda__chipinterface_8h_1a73cb33c93cfc864ffdf708f877b9f953"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_delete_spi</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424chipinterface_delete_spiv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Deinitializes the chipinterface. </p>
+<p>This function should free up any resources acquired by chipinterface_create_spi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv433chipinterface_set_clock_frequency8uint32_t">
+<span id="_CPPv333chipinterface_set_clock_frequency8uint32_t"></span><span id="_CPPv233chipinterface_set_clock_frequency8uint32_t"></span><span id="chipinterface_set_clock_frequency__uint32_t"></span><span class="target" id="novelda__chipinterface_8h_1a18a4ed46a6e2b239673baa62f31995f8"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_set_clock_frequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433chipinterface_set_clock_frequency8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Sets the SPI/I2C clock frequency. </p>
+<p>This function sets the SPI/I2C clock frequency at run-time to the specified value.</p>
+<p>This function is only needed for X7 sensors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>frequencyHz</strong> – the desired SPI/I2C clock frequency </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426chipinterface_transfer_spiPK7uint8_t6size_tP7uint8_t6size_t">
+<span id="_CPPv326chipinterface_transfer_spiPK7uint8_t6size_tP7uint8_t6size_t"></span><span id="_CPPv226chipinterface_transfer_spiPK7uint8_t6size_tP7uint8_t6size_t"></span><span id="chipinterface_transfer_spi__uint8_tCP.s.uint8_tP.s"></span><span class="target" id="novelda__chipinterface_8h_1a17946e3a2051c95b690357d9a4882fdb"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_transfer_spi</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">wdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">wlength</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rlength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426chipinterface_transfer_spiPK7uint8_t6size_tP7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Transfers data from and to the sensor via SPI. </p>
+<p>This function writes and reads data to and from the sensor using the SPI bus. The hardware must first send <code class="docutils literal notranslate"><span class="pre">wlength</span></code> bytes and then read in <code class="docutils literal notranslate"><span class="pre">rlength</span></code> bytes. So the resulting transaction on the bus is <code class="docutils literal notranslate"><span class="pre">wlength</span></code> + <code class="docutils literal notranslate"><span class="pre">rlength</span></code> bytes long.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wdata</strong> – pointer to the buffer containing data to write </p></li>
+<li><p><strong>wlength</strong> – number of bytes to write </p></li>
+<li><p><strong>rdata</strong> – pointer to the buffer where incoming data should be stored </p></li>
+<li><p><strong>rlength</strong> – number of bytes to read </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv433chipinterface_get_interrupt_stateP31chipinterface_interrupt_state_t">
+<span id="_CPPv333chipinterface_get_interrupt_stateP31chipinterface_interrupt_state_t"></span><span id="_CPPv233chipinterface_get_interrupt_stateP31chipinterface_interrupt_state_t"></span><span id="chipinterface_get_interrupt_state__chipinterface_interrupt_state_tP"></span><span class="target" id="novelda__chipinterface_8h_1a8b447903c9a23d34ff2bcb53918045c1"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_get_interrupt_state</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv431chipinterface_interrupt_state_t" title="chipinterface_interrupt_state_t"><span class="n"><span class="pre">chipinterface_interrupt_state_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">state</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433chipinterface_get_interrupt_stateP31chipinterface_interrupt_state_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reads the current state of the interrupt line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> – Pointer to where the current state is written to </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on success </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432chipinterface_wait_for_interrupt8uint32_t">
+<span id="_CPPv332chipinterface_wait_for_interrupt8uint32_t"></span><span id="_CPPv232chipinterface_wait_for_interrupt8uint32_t"></span><span id="chipinterface_wait_for_interrupt__uint32_t"></span><span class="target" id="novelda__chipinterface_8h_1a2704e595b1c29dad48fc0db64fd3d0b1"></span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_wait_for_interrupt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432chipinterface_wait_for_interrupt8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Waits up to a specified period for an interrupt. </p>
+<p>This function blocks and waits for an interrupt for <code class="docutils literal notranslate"><span class="pre">microseconds</span></code> time. If the interrupt line is already asserted, the function returns immediately. If <code class="docutils literal notranslate"><span class="pre">microseconds</span></code> is <code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_WAIT_FOREVER</span></code>, the function waits forever. While waiting, the underlying implementation may put the system into a low-power state or use busy-wait.</p>
+<p>It is enough if the underlying implementation to provide a resolution of 1 ms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – The time to wait or <code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_WAIT_FOREVER</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CHIPINTERFACE_SUCCESS on interrupts, otherwise CHIPINTERFACE_TIMEOUT </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412reverse_bits8uint32_t">
+<span id="_CPPv312reverse_bits8uint32_t"></span><span id="_CPPv212reverse_bits8uint32_t"></span><span id="reverse_bits__uint32_t"></span><span class="target" id="novelda__chipinterface_8h_1a38104054ade9d095ed1d0339291cbb6c"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse_bits</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412reverse_bits8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reverse the bits per byte. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The 32-bit integer whose bits are to be reversed. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 32-bit integer with reversed bits. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432reverse_bits_per_byte_buffer_u32P8uint32_t6size_t">
+<span id="_CPPv332reverse_bits_per_byte_buffer_u32P8uint32_t6size_t"></span><span id="_CPPv232reverse_bits_per_byte_buffer_u32P8uint32_t6size_t"></span><span id="reverse_bits_per_byte_buffer_u32__uint32_tP.s"></span><span class="target" id="novelda__chipinterface_8h_1a666e5f8b6722c52074c3b4d5a305033e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse_bits_per_byte_buffer_u32</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buf</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numElements</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432reverse_bits_per_byte_buffer_u32P8uint32_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reverse the bits for each individual byte in a buffer of specified length. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buf</strong> – Pointer to the buffer. </p></li>
+<li><p><strong>numElements</strong> – Number of uint32_t elements in the buffer. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv431reverse_bits_per_byte_buffer_u8P7uint8_t6size_t">
+<span id="_CPPv331reverse_bits_per_byte_buffer_u8P7uint8_t6size_t"></span><span id="_CPPv231reverse_bits_per_byte_buffer_u8P7uint8_t6size_t"></span><span id="reverse_bits_per_byte_buffer_u8__uint8_tP.s"></span><span class="target" id="novelda__chipinterface_8h_1a8db8351c17e25d859ec70c5005cf5b72"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse_bits_per_byte_buffer_u8</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buf</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numElements</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431reverse_bits_per_byte_buffer_u8P7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reverse the bits for each individual byte in a buffer of specified length. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a wrapper around reverse_bits_per_byte(uint32_t n) which operates on a single 32-bit word at a time. Thus the buffer is assumed to have a length and alignment matching that of uint32_t. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buf</strong> – Pointer to the buffer. </p></li>
+<li><p><strong>numElements</strong> – Number of uint8_t elements in the buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv421CHIPINTERFACE_SUCCESS">
+<span id="_CPPv321CHIPINTERFACE_SUCCESS"></span><span id="_CPPv221CHIPINTERFACE_SUCCESS"></span><span id="CHIPINTERFACE_SUCCESS__chipinterface_error_tC"></span><span class="target" id="novelda__chipinterface_8h_1abd4bb68963871b36b82f0f5cd74dd561"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHIPINTERFACE_SUCCESS</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv421CHIPINTERFACE_SUCCESS" title="Link to this definition">#</a><br /></dt>
+<dd><p>The function call succeeded. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv421CHIPINTERFACE_FAILURE">
+<span id="_CPPv321CHIPINTERFACE_FAILURE"></span><span id="_CPPv221CHIPINTERFACE_FAILURE"></span><span id="CHIPINTERFACE_FAILURE__chipinterface_error_tC"></span><span class="target" id="novelda__chipinterface_8h_1a4079c7ce2a950c708c9a9858bbcf29d5"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHIPINTERFACE_FAILURE</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">1</span></span><a class="headerlink" href="#_CPPv421CHIPINTERFACE_FAILURE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The function call failed due to an error. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv421CHIPINTERFACE_TIMEOUT">
+<span id="_CPPv321CHIPINTERFACE_TIMEOUT"></span><span id="_CPPv221CHIPINTERFACE_TIMEOUT"></span><span id="CHIPINTERFACE_TIMEOUT__chipinterface_error_tC"></span><span class="target" id="novelda__chipinterface_8h_1a8f3acc860c42ad2ee3208567a9f47c23"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv421chipinterface_error_t" title="chipinterface_error_t"><span class="n"><span class="pre">chipinterface_error_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHIPINTERFACE_TIMEOUT</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="o"><span class="pre">-</span></span><span class="m"><span class="pre">2</span></span><a class="headerlink" href="#_CPPv421CHIPINTERFACE_TIMEOUT" title="Link to this definition">#</a><br /></dt>
+<dd><p>The function timed out. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1ab80539d6881a4ed65153ec7a09a1c556"><span class="std std-ref">chipinterface_wait_us</span></a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1a2704e595b1c29dad48fc0db64fd3d0b1"><span class="std std-ref">chipinterface_wait_for_interrupt</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv426CHIPINTERFACE_WAIT_FOREVER">
+<span id="_CPPv326CHIPINTERFACE_WAIT_FOREVER"></span><span id="_CPPv226CHIPINTERFACE_WAIT_FOREVER"></span><span id="CHIPINTERFACE_WAIT_FOREVER__uint32_tC"></span><span class="target" id="novelda__chipinterface_8h_1a126cc4b902365ae6f2826456d27e2877"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CHIPINTERFACE_WAIT_FOREVER</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">UINT32_MAX</span></span><a class="headerlink" href="#_CPPv426CHIPINTERFACE_WAIT_FOREVER" title="Link to this definition">#</a><br /></dt>
+<dd><p>Represents an infinite wait time. </p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1ab80539d6881a4ed65153ec7a09a1c556"><span class="std std-ref">chipinterface_wait_us</span></a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#novelda__chipinterface_8h_1a2704e595b1c29dad48fc0db64fd3d0b1"><span class="std std-ref">chipinterface_wait_for_interrupt</span></a></p>
+</div>
+</p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv435chipinterface_default_x4_spi_config">
+<span id="_CPPv335chipinterface_default_x4_spi_config"></span><span id="_CPPv235chipinterface_default_x4_spi_config"></span><span id="chipinterface_default_x4_spi_config__chipinterface_spi_config_tC"></span><span class="target" id="novelda__chipinterface_8h_1a934a2cb89e80d47a74023b1dc6e3fffc"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv426chipinterface_spi_config_t" title="chipinterface_spi_config_t"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_default_x4_spi_config</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N24chipinterface_polarity_t26chipinterface_polarity_lowE" title="chipinterface_polarity_low"><span class="n"><span class="pre">chipinterface_polarity_low</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N21chipinterface_phase_t27chipinterface_phase_leadingE" title="chipinterface_phase_leading"><span class="n"><span class="pre">chipinterface_phase_leading</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_msbE" title="chipinterface_bitorder_msb"><span class="n"><span class="pre">chipinterface_bitorder_msb</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv435chipinterface_default_x4_spi_config" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI configuration to be used for communication to X4 sensors. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv435chipinterface_default_x7_spi_config">
+<span id="_CPPv335chipinterface_default_x7_spi_config"></span><span id="_CPPv235chipinterface_default_x7_spi_config"></span><span id="chipinterface_default_x7_spi_config__chipinterface_spi_config_tC"></span><span class="target" id="novelda__chipinterface_8h_1a3ac7ad44c976cf5d35f719e65d48582b"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv426chipinterface_spi_config_t" title="chipinterface_spi_config_t"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_default_x7_spi_config</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N24chipinterface_polarity_t26chipinterface_polarity_lowE" title="chipinterface_polarity_low"><span class="n"><span class="pre">chipinterface_polarity_low</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N21chipinterface_phase_t28chipinterface_phase_trailingE" title="chipinterface_phase_trailing"><span class="n"><span class="pre">chipinterface_phase_trailing</span></span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE" title="chipinterface_bitorder_lsb"><span class="n"><span class="pre">chipinterface_bitorder_lsb</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv435chipinterface_default_x7_spi_config" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI configuration to be used for communication to X7 sensors. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp">
+<span class="target" id="structchipinterface__spi__config__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">chipinterface_spi_config_t</span></span></span><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;novelda_chipinterface.h&gt;</em></div>
+<p>SPI clock configuration to be used for the connection. </p>
+<p>Novelda X4 and X7 sensors require a different SPI clock configuration. Novelda provides default values for their sensors.</p>
+<p><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x4_spi_config </p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>chipinterface_default_x7_spi_config </p>
+</div>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26chipinterface_spi_config_t14clock_polarityE">
+<span id="_CPPv3N26chipinterface_spi_config_t14clock_polarityE"></span><span id="_CPPv2N26chipinterface_spi_config_t14clock_polarityE"></span><span id="chipinterface_spi_config_t::clock_polarity__chipinterface_polarity_t"></span><span class="target" id="structchipinterface__spi__config__t_1abbbfe8dfbefd63d0d655b805be0591eb"></span><a class="reference internal" href="#_CPPv424chipinterface_polarity_t" title="chipinterface_polarity_t"><span class="n"><span class="pre">chipinterface_polarity_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_polarity</span></span></span><a class="headerlink" href="#_CPPv4N26chipinterface_spi_config_t14clock_polarityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock polarity. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26chipinterface_spi_config_t11clock_phaseE">
+<span id="_CPPv3N26chipinterface_spi_config_t11clock_phaseE"></span><span id="_CPPv2N26chipinterface_spi_config_t11clock_phaseE"></span><span id="chipinterface_spi_config_t::clock_phase__chipinterface_phase_t"></span><span class="target" id="structchipinterface__spi__config__t_1add1ba560bbd8dd7088019b07ad62c95f"></span><a class="reference internal" href="#_CPPv421chipinterface_phase_t" title="chipinterface_phase_t"><span class="n"><span class="pre">chipinterface_phase_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clock_phase</span></span></span><a class="headerlink" href="#_CPPv4N26chipinterface_spi_config_t11clock_phaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock phase. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26chipinterface_spi_config_t9bit_orderE">
+<span id="_CPPv3N26chipinterface_spi_config_t9bit_orderE"></span><span id="_CPPv2N26chipinterface_spi_config_t9bit_orderE"></span><span id="chipinterface_spi_config_t::bit_order__chipinterface_bitorder_t"></span><span class="target" id="structchipinterface__spi__config__t_1a3747a0a256dcbf11349177af190dc2a3"></span><a class="reference internal" href="#_CPPv424chipinterface_bitorder_t" title="chipinterface_bitorder_t"><span class="n"><span class="pre">chipinterface_bitorder_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bit_order</span></span></span><a class="headerlink" href="#_CPPv4N26chipinterface_spi_config_t9bit_orderE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bit order. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421chipinterface_error_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_error_t</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv426chipinterface_spi_config_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_spi_config_t</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv431chipinterface_interrupt_state_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_interrupt_state_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N31chipinterface_interrupt_state_t32chipinterface_interrupt_assertedE"><code class="docutils literal notranslate"><span class="pre">chipinterface_interrupt_state_t::chipinterface_interrupt_asserted</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N31chipinterface_interrupt_state_t34chipinterface_interrupt_deassertedE"><code class="docutils literal notranslate"><span class="pre">chipinterface_interrupt_state_t::chipinterface_interrupt_deasserted</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_polarity_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_polarity_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N24chipinterface_polarity_t26chipinterface_polarity_lowE"><code class="docutils literal notranslate"><span class="pre">chipinterface_polarity_t::chipinterface_polarity_low</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N24chipinterface_polarity_t27chipinterface_polarity_highE"><code class="docutils literal notranslate"><span class="pre">chipinterface_polarity_t::chipinterface_polarity_high</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421chipinterface_phase_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_phase_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N21chipinterface_phase_t27chipinterface_phase_leadingE"><code class="docutils literal notranslate"><span class="pre">chipinterface_phase_t::chipinterface_phase_leading</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N21chipinterface_phase_t28chipinterface_phase_trailingE"><code class="docutils literal notranslate"><span class="pre">chipinterface_phase_t::chipinterface_phase_trailing</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_bitorder_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_bitorder_t</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_msbE"><code class="docutils literal notranslate"><span class="pre">chipinterface_bitorder_t::chipinterface_bitorder_msb</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N24chipinterface_bitorder_t26chipinterface_bitorder_lsbE"><code class="docutils literal notranslate"><span class="pre">chipinterface_bitorder_t::chipinterface_bitorder_lsb</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv430chipinterface_set_chip_enabledb"><code class="docutils literal notranslate"><span class="pre">chipinterface_set_chip_enabled()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421chipinterface_wait_us8uint32_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_wait_us()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv435chipinterface_get_time_microsecondsP8uint32_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_get_time_microseconds()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_create_i2c8uint32_t7uint8_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_create_i2c()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_delete_i2cv"><code class="docutils literal notranslate"><span class="pre">chipinterface_delete_i2c()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv422chipinterface_read_i2cP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_read_i2c()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv423chipinterface_write_i2cPK7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_write_i2c()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_create_spi8uint32_tPK26chipinterface_spi_config_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_create_spi()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv424chipinterface_delete_spiv"><code class="docutils literal notranslate"><span class="pre">chipinterface_delete_spi()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv433chipinterface_set_clock_frequency8uint32_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_set_clock_frequency()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv426chipinterface_transfer_spiPK7uint8_t6size_tP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_transfer_spi()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv433chipinterface_get_interrupt_stateP31chipinterface_interrupt_state_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_get_interrupt_state()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv432chipinterface_wait_for_interrupt8uint32_t"><code class="docutils literal notranslate"><span class="pre">chipinterface_wait_for_interrupt()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv412reverse_bits8uint32_t"><code class="docutils literal notranslate"><span class="pre">reverse_bits()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv432reverse_bits_per_byte_buffer_u32P8uint32_t6size_t"><code class="docutils literal notranslate"><span class="pre">reverse_bits_per_byte_buffer_u32()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv431reverse_bits_per_byte_buffer_u8P7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">reverse_bits_per_byte_buffer_u8()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421CHIPINTERFACE_SUCCESS"><code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_SUCCESS</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421CHIPINTERFACE_FAILURE"><code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_FAILURE</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv421CHIPINTERFACE_TIMEOUT"><code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_TIMEOUT</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv426CHIPINTERFACE_WAIT_FOREVER"><code class="docutils literal notranslate"><span class="pre">CHIPINTERFACE_WAIT_FOREVER</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv435chipinterface_default_x4_spi_config"><code class="docutils literal notranslate"><span class="pre">chipinterface_default_x4_spi_config</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv435chipinterface_default_x7_spi_config"><code class="docutils literal notranslate"><span class="pre">chipinterface_default_x7_spi_config</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N26chipinterface_spi_config_t14clock_polarityE"><code class="docutils literal notranslate"><span class="pre">chipinterface_spi_config_t::clock_polarity</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N26chipinterface_spi_config_t11clock_phaseE"><code class="docutils literal notranslate"><span class="pre">chipinterface_spi_config_t::clock_phase</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N26chipinterface_spi_config_t9bit_orderE"><code class="docutils literal notranslate"><span class="pre">chipinterface_spi_config_t::bit_order</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, NOVELDA AS.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

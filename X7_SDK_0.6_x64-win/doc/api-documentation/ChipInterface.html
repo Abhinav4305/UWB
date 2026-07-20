@@ -1,0 +1,1601 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="192x192" href="../_static/cropped-NOVELDA-icon-192x192.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="../_static/cropped-NOVELDA-icon-32x32.png" type="image/png">
+    <title>ChipInterface.h &#8212; NOVELDA IC documentation 0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=b70b1b6f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=8dde47fa"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api-documentation/ChipInterface';</script>
+    <script src="../_static/js/custom.js?v=bb7c8fd7"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="novelda_platform_generic.h" href="novelda_platform_generic.html" />
+    <link rel="prev" title="novelda_chipinterface.h" href="novelda_chipinterface.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../_static/Novelda_logo_hvit_72_dpi.png" class="logo__image only-dark" alt="NOVELDA"/>
+    <img src="../_static/Novelda_logo_RGB_positiv_72_dpi.png" class="logo__image only-light pst-js-only" alt="NOVELDA"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/zephyr/README_zephyr.html">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Platform/esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ChipInterface.h</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chipinterface-h">
+<h1>ChipInterface.h<a class="headerlink" href="#chipinterface-h" title="Link to this heading">#</a></h1>
+<p>C++ ChipInterface API for interfacing with Novelda radar sensors. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CHIPINTERFACE_SYMBOL_EXPORT">
+<span class="target" id="ChipInterface_8h_1a6510dc3e762d2f150378dcd0c87d4ca2"></span><span class="sig-name descname"><span class="n"><span class="pre">CHIPINTERFACE_SYMBOL_EXPORT</span></span></span><a class="headerlink" href="#c.CHIPINTERFACE_SYMBOL_EXPORT" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv429get_ft4222_host_interface_idsP7int32_t">
+<span id="_CPPv329get_ft4222_host_interface_idsP7int32_t"></span><span id="_CPPv229get_ft4222_host_interface_idsP7int32_t"></span><span id="get_ft4222_host_interface_ids__int32_tP"></span><span class="target" id="ChipInterface_8h_1acc476813163150c08bb514e92c406c66"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_ft4222_host_interface_ids</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429get_ft4222_host_interface_idsP7int32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get a list of FT4222 host interface IDs. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv430free_ft4222_host_interface_idsP8uint32_t">
+<span id="_CPPv330free_ft4222_host_interface_idsP8uint32_t"></span><span id="_CPPv230free_ft4222_host_interface_idsP8uint32_t"></span><span id="free_ft4222_host_interface_ids__uint32_tP"></span><span class="target" id="ChipInterface_8h_1a84cae43d23cb8b33fcbc63849833ba9c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">free_ft4222_host_interface_ids</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ptr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430free_ft4222_host_interface_idsP8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Free the list of FT4222 host interface IDs. </p>
+</dd></dl>
+
+</div>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv47Novelda">
+<span id="_CPPv37Novelda"></span><span id="_CPPv27Novelda"></span><span id="Novelda"></span><span class="target" id="namespaceNovelda"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Novelda</span></span></span><a class="headerlink" href="#_CPPv47Novelda" title="Link to this definition">#</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13SpiLineNumberE">
+<span id="_CPPv3N7Novelda13SpiLineNumberE"></span><span id="_CPPv2N7Novelda13SpiLineNumberE"></span><span class="target" id="ChipInterface_8h_1ac2f8db6676ad9e7bcf4d295914f576d8"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpiLineNumber</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13SpiLineNumberE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of data lines for SPI. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13SpiLineNumber3SpiE">
+<span id="_CPPv3N7Novelda13SpiLineNumber3SpiE"></span><span id="_CPPv2N7Novelda13SpiLineNumber3SpiE"></span><span class="target" id="ChipInterface_8h_1ac2f8db6676ad9e7bcf4d295914f576d8a8243138fa8e2e7b41718edee2c57d9ad"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Spi</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13SpiLineNumber3SpiE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13SpiLineNumber4DSpiE">
+<span id="_CPPv3N7Novelda13SpiLineNumber4DSpiE"></span><span id="_CPPv2N7Novelda13SpiLineNumber4DSpiE"></span><span class="target" id="ChipInterface_8h_1ac2f8db6676ad9e7bcf4d295914f576d8a6277fe203210d6b1326b6e1770aa7bba"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">DSpi</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13SpiLineNumber4DSpiE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13SpiLineNumber4QSpiE">
+<span id="_CPPv3N7Novelda13SpiLineNumber4QSpiE"></span><span id="_CPPv2N7Novelda13SpiLineNumber4QSpiE"></span><span class="target" id="ChipInterface_8h_1ac2f8db6676ad9e7bcf4d295914f576d8ade76c4e6cbb17bacba184a7aa86716b4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">QSpi</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13SpiLineNumber4QSpiE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ClockPolarityE">
+<span id="_CPPv3N7Novelda13ClockPolarityE"></span><span id="_CPPv2N7Novelda13ClockPolarityE"></span><span class="target" id="ChipInterface_8h_1a8d98a8496d8beaca77504c3950d8c142"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClockPolarity</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ClockPolarityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI Clock Polarity (CPOL). </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ClockPolarity3LowE">
+<span id="_CPPv3N7Novelda13ClockPolarity3LowE"></span><span id="_CPPv2N7Novelda13ClockPolarity3LowE"></span><span class="target" id="ChipInterface_8h_1a8d98a8496d8beaca77504c3950d8c142a28d0edd045e05cf5af64e35ae0c4c6ef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Low</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ClockPolarity3LowE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock which idles at the logical low voltage (CPOL=0) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ClockPolarity4HighE">
+<span id="_CPPv3N7Novelda13ClockPolarity4HighE"></span><span id="_CPPv2N7Novelda13ClockPolarity4HighE"></span><span class="target" id="ChipInterface_8h_1a8d98a8496d8beaca77504c3950d8c142a655d20c1ca69519ca647684edbb2db35"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">High</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ClockPolarity4HighE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Clock which idles at the logical high voltage (CPOL=1) </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda10ClockPhaseE">
+<span id="_CPPv3N7Novelda10ClockPhaseE"></span><span id="_CPPv2N7Novelda10ClockPhaseE"></span><span class="target" id="ChipInterface_8h_1a2e36f92f996bcc7b4114e7c063a92107"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ClockPhase</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda10ClockPhaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI Clock Phase (CPHA). </p>
+<p>Represents the phase of each data bit’s transmission cycle relative to SCLK. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda10ClockPhase7LeadingE">
+<span id="_CPPv3N7Novelda10ClockPhase7LeadingE"></span><span id="_CPPv2N7Novelda10ClockPhase7LeadingE"></span><span class="target" id="ChipInterface_8h_1a2e36f92f996bcc7b4114e7c063a92107a2dce4eff1485d1b69b3667f8c4d7c062"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Leading</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda10ClockPhase7LeadingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The first data bit is output immediately when CS activates. </p>
+<p>(CPHA = 0) </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda10ClockPhase8TrailingE">
+<span id="_CPPv3N7Novelda10ClockPhase8TrailingE"></span><span id="_CPPv2N7Novelda10ClockPhase8TrailingE"></span><span class="target" id="ChipInterface_8h_1a2e36f92f996bcc7b4114e7c063a92107ab7e7eecbc4a9a1151ccae2f9c5aa7b14"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Trailing</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda10ClockPhase8TrailingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The first data bit is output on SCLK’s first clock edge after CS activates. </p>
+<p>(CPHA = 1) </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8BitOrderE">
+<span id="_CPPv3N7Novelda8BitOrderE"></span><span id="_CPPv2N7Novelda8BitOrderE"></span><span class="target" id="ChipInterface_8h_1ae25d44950f041981db6756c2610f8eb5"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BitOrder</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8BitOrderE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bit order for SPI communication. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8BitOrder3MSBE">
+<span id="_CPPv3N7Novelda8BitOrder3MSBE"></span><span id="_CPPv2N7Novelda8BitOrder3MSBE"></span><span class="target" id="ChipInterface_8h_1ae25d44950f041981db6756c2610f8eb5ae86b28b55eaf8feb03e24730be892314"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MSB</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8BitOrder3MSBE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8BitOrder3LSBE">
+<span id="_CPPv3N7Novelda8BitOrder3LSBE"></span><span id="_CPPv2N7Novelda8BitOrder3LSBE"></span><span class="target" id="ChipInterface_8h_1ae25d44950f041981db6756c2610f8eb5a6ea6688cc99719eb4624eef718719215"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LSB</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8BitOrder3LSBE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerEdgeE">
+<span id="_CPPv3N7Novelda11TriggerEdgeE"></span><span id="_CPPv2N7Novelda11TriggerEdgeE"></span><span class="target" id="ChipInterface_8h_1a27ef32b88d2e55753cf57a163499a819"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriggerEdge</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerEdgeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Trigger edge for GPIO interrupts. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerEdge6RisingE">
+<span id="_CPPv3N7Novelda11TriggerEdge6RisingE"></span><span id="_CPPv2N7Novelda11TriggerEdge6RisingE"></span><span class="target" id="ChipInterface_8h_1a27ef32b88d2e55753cf57a163499a819a4475404a8e17049853e83d014a833ca1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Rising</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerEdge6RisingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Listen for rising edge events. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerEdge7FallingE">
+<span id="_CPPv3N7Novelda11TriggerEdge7FallingE"></span><span id="_CPPv2N7Novelda11TriggerEdge7FallingE"></span><span class="target" id="ChipInterface_8h_1a27ef32b88d2e55753cf57a163499a819a0f57d5b441651c57eac9f91efaa5a75a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Falling</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerEdge7FallingE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Listen for falling edge events. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerModeE">
+<span id="_CPPv3N7Novelda11TriggerModeE"></span><span id="_CPPv2N7Novelda11TriggerModeE"></span><span class="target" id="ChipInterface_8h_1a6f5b485664e6958ea947c5e5c9fbf653"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">TriggerMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerModeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Trigger mode for GPIO interrupts. </p>
+<p>This is currently only used by the FT4222 chip interface where the Continuous mode will use GPIO_TRIGGER_LEVEL_HIGH and GPIO_TRIGGER_LEVEL_LOW instead of the GPIO_TRIGGER_RISING and GPIO_TRIGGER_FALLING. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerMode10ContinuousE">
+<span id="_CPPv3N7Novelda11TriggerMode10ContinuousE"></span><span id="_CPPv2N7Novelda11TriggerMode10ContinuousE"></span><span class="target" id="ChipInterface_8h_1a6f5b485664e6958ea947c5e5c9fbf653a535863a82f163709557e59e2eb8139a7"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Continuous</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerMode10ContinuousE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11TriggerMode7TriggerE">
+<span id="_CPPv3N7Novelda11TriggerMode7TriggerE"></span><span id="_CPPv2N7Novelda11TriggerMode7TriggerE"></span><span class="target" id="ChipInterface_8h_1a6f5b485664e6958ea947c5e5c9fbf653af698f67f5666aff10729d8a1cb1c14d2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Trigger</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11TriggerMode7TriggerE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateI2cChipInterfaceENSt10unique_ptrI16I2cChipInterfaceEE8uint32_t7uint8_t12GpioSettingsN13ChipInterface10IdentifierE">
+<span id="_CPPv3I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateI2cChipInterfaceE8uint32_t7uint8_t12GpioSettingsN13ChipInterface10IdentifierE"></span><span id="_CPPv2I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateI2cChipInterfaceE8uint32_t7uint8_t12GpioSettingsN13ChipInterface10IdentifierE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface13InterfaceTypeE" title="Novelda::ChipInterface::InterfaceType"><span class="n"><span class="pre">InterfaceType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ChipInterface_8h_1a126d1e3c266ebe5e41d8024df73e45c5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7Novelda16I2cChipInterfaceE" title="Novelda::I2cChipInterface"><span class="n"><span class="pre">I2cChipInterface</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CreateI2cChipInterface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">slaveAddress</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">gpioSettings</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface10IdentifierE" title="Novelda::ChipInterface::Identifier"><span class="n"><span class="pre">Identifier</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">identifier</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateI2cChipInterfaceENSt10unique_ptrI16I2cChipInterfaceEE8uint32_t7uint8_t12GpioSettingsN13ChipInterface10IdentifierE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create an I2C chip interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The type of the I2C chip interface. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>frequencyHz</strong> – The I2C clock frequency. </p></li>
+<li><p><strong>slaveAddress</strong> – The address of the X4/X7 chip. </p></li>
+<li><p><strong>gpioSettings</strong> – The GPIO settings. </p></li>
+<li><p><strong>identifier</strong> – The identifier for the chip interface. </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::unique_ptr&lt;I2cChipInterface&gt; </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateSpiChipInterfaceENSt10unique_ptrI16SpiChipInterfaceEE11SpiSettings12GpioSettings8uint32_tN13ChipInterface10IdentifierE">
+<span id="_CPPv3I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateSpiChipInterfaceE11SpiSettings12GpioSettings8uint32_tN13ChipInterface10IdentifierE"></span><span id="_CPPv2I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateSpiChipInterfaceE11SpiSettings12GpioSettings8uint32_tN13ChipInterface10IdentifierE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface13InterfaceTypeE" title="Novelda::ChipInterface::InterfaceType"><span class="n"><span class="pre">InterfaceType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ChipInterface_8h_1af10a8915edc475628dbd7bf2d9b5ac9d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unique_ptr</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N7Novelda16SpiChipInterfaceE" title="Novelda::SpiChipInterface"><span class="n"><span class="pre">SpiChipInterface</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">CreateSpiChipInterface</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Novelda11SpiSettingsE" title="Novelda::SpiSettings"><span class="n"><span class="pre">SpiSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">spiSettings</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">gpioSettings</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface10IdentifierE" title="Novelda::ChipInterface::Identifier"><span class="n"><span class="pre">Identifier</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">identifier</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateSpiChipInterfaceENSt10unique_ptrI16SpiChipInterfaceEE11SpiSettings12GpioSettings8uint32_tN13ChipInterface10IdentifierE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Create a SPI chip interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>type</strong> – The type of the SPI chip interface. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>spiSettings</strong> – The SPI settings. </p></li>
+<li><p><strong>gpioSettings</strong> – The GPIO settings. </p></li>
+<li><p><strong>frequencyHz</strong> – The SPI clock frequency. </p></li>
+<li><p><strong>identifier</strong> – The identifier for the chip interface. </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>std::unique_ptr&lt;SpiChipInterface&gt; </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda21reverse_bits_per_byteE8uint32_t">
+<span id="_CPPv3N7Novelda21reverse_bits_per_byteE8uint32_t"></span><span id="_CPPv2N7Novelda21reverse_bits_per_byteE8uint32_t"></span><span id="Novelda::reverse_bits_per_byte__uint32_t"></span><span class="target" id="ChipInterface_8h_1ae9e8161f484da6235519ae70586033c6"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse_bits_per_byte</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">n</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda21reverse_bits_per_byteE8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reverse the bits per byte. </p>
+<p>This function takes a 32-bit integer and reverses the bits in each byte.</p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &quot;ChipInterface.h&quot;</span>
+<span class="c1">#include &lt;iostream&gt;</span>
+<span class="c1">#include &lt;bitset&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">uint32_t</span> <span class="n">original</span> <span class="o">=</span> <span class="mb">0b00000000</span><span class="s1">&#39;00000000&#39;</span><span class="mi">00000000</span><span class="s1">&#39;00000001;</span>
+    <span class="n">uint32_t</span> <span class="nb">reversed</span> <span class="o">=</span> <span class="n">reverse_bits_per_byte</span><span class="p">(</span><span class="n">original</span><span class="p">);</span>
+    <span class="o">//</span> <span class="n">Output</span><span class="p">:</span> <span class="mi">00000000000000000000000010000000</span>
+    <span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">32</span><span class="o">&gt;</span><span class="p">(</span><span class="nb">reversed</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> – The 32-bit integer whose bits are to be reversed. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The 32-bit integer with reversed bits per byte.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0EN7Novelda21reverse_bits_per_byteEvP1T6size_t">
+<span id="_CPPv3I0EN7Novelda21reverse_bits_per_byteEP1T6size_t"></span><span id="_CPPv2I0EN7Novelda21reverse_bits_per_byteEP1T6size_t"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="ChipInterface_8h_1ad9771f53ab16f000bb18e491b7ee3cb4"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reverse_bits_per_byte</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN7Novelda21reverse_bits_per_byteEvP1T6size_t" title="Novelda::reverse_bits_per_byte::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">buf</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">numElements</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN7Novelda21reverse_bits_per_byteEvP1T6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Reverse the bits for each individual byte in a buffer of specified length. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a wrapper around <a class="reference internal" href="#ChipInterface_8h_1ae9e8161f484da6235519ae70586033c6"><span class="std std-ref">reverse_bits_per_byte(uint32_t n)</span></a> which operates on a single 32-bit word at a time. Thus the buffer is assumed to have a length and alignment matching that of uint32_t. Supported types are uint32_t and uint8_t. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buf</strong> – Pointer to the buffer. </p></li>
+<li><p><strong>numElements</strong> – Number of elements of type T in the buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda7wait_usENSt6chrono12microsecondsE">
+<span id="_CPPv3N7Novelda7wait_usENSt6chrono12microsecondsE"></span><span id="_CPPv2N7Novelda7wait_usENSt6chrono12microsecondsE"></span><span id="Novelda::wait_us__std::chrono::microseconds"></span><span class="target" id="ChipInterface_8h_1a087a3a0ab9372b25172c54bb72bf4b45"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">wait_us</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">microseconds</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda7wait_usENSt6chrono12microsecondsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for a specified number of microseconds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – The number of microseconds to wait. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterfaceE">
+<span id="_CPPv3N7Novelda13ChipInterfaceE"></span><span id="_CPPv2N7Novelda13ChipInterfaceE"></span><span id="Novelda::ChipInterface"></span><span class="target" id="classNovelda_1_1ChipInterface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ChipInterface</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Abstract classes representing a communication interface to X4/X7 chips. </p>
+<p>Subclassed by <a class="reference internal" href="#classNovelda_1_1I2cChipInterface"><span class="std std-ref">Novelda::I2cChipInterface</span></a>, <a class="reference internal" href="#classNovelda_1_1SpiChipInterface"><span class="std std-ref">Novelda::SpiChipInterface</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-types">Public Types</p>
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14ConnectionTypeE">
+<span id="_CPPv3N7Novelda13ChipInterface14ConnectionTypeE"></span><span id="_CPPv2N7Novelda13ChipInterface14ConnectionTypeE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a29b6bc509db7fd6543d81ece0f8d5dee"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ConnectionType</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14ConnectionTypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Type of connection to the radar chip. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14ConnectionType3I2cE">
+<span id="_CPPv3N7Novelda13ChipInterface14ConnectionType3I2cE"></span><span id="_CPPv2N7Novelda13ChipInterface14ConnectionType3I2cE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a29b6bc509db7fd6543d81ece0f8d5deea48e035158fad15d20b38ebf1593c2339"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I2c</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3I2cE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I2C connection. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14ConnectionType3I3cE">
+<span id="_CPPv3N7Novelda13ChipInterface14ConnectionType3I3cE"></span><span id="_CPPv2N7Novelda13ChipInterface14ConnectionType3I3cE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a29b6bc509db7fd6543d81ece0f8d5deeaf555bb5c7f512fc1155b0c32551323af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I3c</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3I3cE" title="Link to this definition">#</a><br /></dt>
+<dd><p>I3C connection. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14ConnectionType3SpiE">
+<span id="_CPPv3N7Novelda13ChipInterface14ConnectionType3SpiE"></span><span id="_CPPv2N7Novelda13ChipInterface14ConnectionType3SpiE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a29b6bc509db7fd6543d81ece0f8d5deea8243138fa8e2e7b41718edee2c57d9ad"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Spi</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3SpiE" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI connection. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13InterfaceTypeE">
+<span id="_CPPv3N7Novelda13ChipInterface13InterfaceTypeE"></span><span id="_CPPv2N7Novelda13ChipInterface13InterfaceTypeE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a903f0e1ae765bda11a2386f09f9d5c72"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterfaceType</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13InterfaceTypeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Type of interface to the radar chip. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13InterfaceType11LinuxNativeE">
+<span id="_CPPv3N7Novelda13ChipInterface13InterfaceType11LinuxNativeE"></span><span id="_CPPv2N7Novelda13ChipInterface13InterfaceType11LinuxNativeE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a903f0e1ae765bda11a2386f09f9d5c72a94fd5d8e1740fdc92b23dd83f752c85f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LinuxNative</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType11LinuxNativeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Linux native interface using libgpiod. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13InterfaceType6Ft4222E">
+<span id="_CPPv3N7Novelda13ChipInterface13InterfaceType6Ft4222E"></span><span id="_CPPv2N7Novelda13ChipInterface13InterfaceType6Ft4222E"></span><span class="target" id="classNovelda_1_1ChipInterface_1a903f0e1ae765bda11a2386f09f9d5c72ac4304a6c76c11eaec56da335585d8f73"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Ft4222</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType6Ft4222E" title="Link to this definition">#</a><br /></dt>
+<dd><p>FTDI FT4222 interface. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13InterfaceType9BareMetalE">
+<span id="_CPPv3N7Novelda13ChipInterface13InterfaceType9BareMetalE"></span><span id="_CPPv2N7Novelda13ChipInterface13InterfaceType9BareMetalE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a903f0e1ae765bda11a2386f09f9d5c72addcb67e8ba1538dd7f315ff111154cc5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">BareMetal</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType9BareMetalE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bare metal interface using the C chip interface API. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum-class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14InterruptStateE">
+<span id="_CPPv3N7Novelda13ChipInterface14InterruptStateE"></span><span id="_CPPv2N7Novelda13ChipInterface14InterruptStateE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a72a06a04e49cbdff8df75fc580d724ac"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InterruptState</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14InterruptStateE" title="Link to this definition">#</a><br /></dt>
+<dd><p>State of the interrupt line. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14InterruptState8AssertedE">
+<span id="_CPPv3N7Novelda13ChipInterface14InterruptState8AssertedE"></span><span id="_CPPv2N7Novelda13ChipInterface14InterruptState8AssertedE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a72a06a04e49cbdff8df75fc580d724aca8f2c3053f9b6f498afda7c497f82d506"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asserted</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14InterruptState8AssertedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Interrupt line is asserted. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14InterruptState10DeassertedE">
+<span id="_CPPv3N7Novelda13ChipInterface14InterruptState10DeassertedE"></span><span id="_CPPv2N7Novelda13ChipInterface14InterruptState10DeassertedE"></span><span class="target" id="classNovelda_1_1ChipInterface_1a72a06a04e49cbdff8df75fc580d724aca766f3d1bf7bd58cf056cc8481884d8e9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Deasserted</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14InterruptState10DeassertedE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Interrupt line is deasserted. </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13ChipInterfaceE14ConnectionType8uint32_t">
+<span id="_CPPv3N7Novelda13ChipInterface13ChipInterfaceE14ConnectionType8uint32_t"></span><span id="_CPPv2N7Novelda13ChipInterface13ChipInterfaceE14ConnectionType8uint32_t"></span><span id="Novelda::ChipInterface::ChipInterface__ConnectionType.uint32_t"></span><span class="target" id="classNovelda_1_1ChipInterface_1a37a502ea2ee2e7796c7fca8d25155199"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ChipInterface</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface14ConnectionTypeE" title="Novelda::ChipInterface::ConnectionType"><span class="n"><span class="pre">ConnectionType</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">connectionType</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13ChipInterfaceE14ConnectionType8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor for the <a class="reference internal" href="#classNovelda_1_1ChipInterface"><span class="std std-ref">ChipInterface</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface">
+<span id="_CPPv3N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface"></span><span id="_CPPv2N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface"></span><span id="Novelda::ChipInterface::ChipInterface__ChipInterfaceCR"></span><span class="target" id="classNovelda_1_1ChipInterface_1afbbca3f1810352096629ccf97bb4eba0"></span><span class="sig-name descname"><span class="n"><span class="pre">ChipInterface</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface" title="Novelda::ChipInterface::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterfaceaSERK13ChipInterface">
+<span id="_CPPv3N7Novelda13ChipInterfaceaSERK13ChipInterface"></span><span id="_CPPv2N7Novelda13ChipInterfaceaSERK13ChipInterface"></span><span id="Novelda::ChipInterface::assign-operator__ChipInterfaceCR"></span><span class="target" id="classNovelda_1_1ChipInterface_1ab2dcd95d6013d392327d30f139a7e929"></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">=</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterfaceaSERK13ChipInterface" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterfaceD0Ev">
+<span id="_CPPv3N7Novelda13ChipInterfaceD0Ev"></span><span id="_CPPv2N7Novelda13ChipInterfaceD0Ev"></span><span id="Novelda::ChipInterface::~ChipInterface"></span><span class="target" id="classNovelda_1_1ChipInterface_1a587a50b58978c41d83888288fdcd0c60"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~ChipInterface</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterfaceD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface14SetChipEnabledEb">
+<span id="_CPPv3N7Novelda13ChipInterface14SetChipEnabledEb"></span><span id="_CPPv2N7Novelda13ChipInterface14SetChipEnabledEb"></span><span id="Novelda::ChipInterface::SetChipEnabled__b"></span><span class="target" id="classNovelda_1_1ChipInterface_1a472226687b719150c72d1a4c44c2f816"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetChipEnabled</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enabled</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface14SetChipEnabledEb" title="Link to this definition">#</a><br /></dt>
+<dd><p>Enable or disable the chip. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enabled</strong> – True to enable the chip, false to disable it. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface19GetTimeMicrosecondsEPNSt6chrono12microsecondsE">
+<span id="_CPPv3N7Novelda13ChipInterface19GetTimeMicrosecondsEPNSt6chrono12microsecondsE"></span><span id="_CPPv2N7Novelda13ChipInterface19GetTimeMicrosecondsEPNSt6chrono12microsecondsE"></span><span id="Novelda::ChipInterface::GetTimeMicroseconds__std::chrono::microsecondsP"></span><span class="target" id="classNovelda_1_1ChipInterface_1ab096727f840ee283ddbb540abe91fa4e"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetTimeMicroseconds</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">microseconds</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">time_us</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface19GetTimeMicrosecondsEPNSt6chrono12microsecondsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current time in microseconds. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Throws an exception on nullptr input. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_us</strong> – Pointer to where the current time is written to. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface17GetInterruptStateEv">
+<span id="_CPPv3N7Novelda13ChipInterface17GetInterruptStateEv"></span><span id="_CPPv2N7Novelda13ChipInterface17GetInterruptStateEv"></span><span id="Novelda::ChipInterface::GetInterruptState"></span><span class="target" id="classNovelda_1_1ChipInterface_1a2b709f5d86a98be6653c94bff890cffa"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface14InterruptStateE" title="Novelda::ChipInterface::InterruptState"><span class="n"><span class="pre">InterruptState</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetInterruptState</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface17GetInterruptStateEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the current state of the interrupt line. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface16WaitForInterruptENSt6chrono12microsecondsE">
+<span id="_CPPv3N7Novelda13ChipInterface16WaitForInterruptENSt6chrono12microsecondsE"></span><span id="_CPPv2N7Novelda13ChipInterface16WaitForInterruptENSt6chrono12microsecondsE"></span><span id="Novelda::ChipInterface::WaitForInterrupt__std::chrono::microseconds"></span><span class="target" id="classNovelda_1_1ChipInterface_1ae344dc0aed142eeb75ccff7ba83e4ae2"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WaitForInterrupt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">microseconds</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface16WaitForInterruptENSt6chrono12microsecondsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for an interrupt. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – Maximum wait time in microseconds. 0 means: infinite wait.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if an interrupt occurred, false if a timeout occurred. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface16WaitMicrosecondsENSt6chrono12microsecondsE">
+<span id="_CPPv3N7Novelda13ChipInterface16WaitMicrosecondsENSt6chrono12microsecondsE"></span><span id="_CPPv2N7Novelda13ChipInterface16WaitMicrosecondsENSt6chrono12microsecondsE"></span><span id="Novelda::ChipInterface::WaitMicroseconds__std::chrono::microseconds"></span><span class="target" id="classNovelda_1_1ChipInterface_1a8f33cf0a7672027865a388ba6c921159"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">WaitMicroseconds</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">chrono</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">microseconds</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">microseconds</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface16WaitMicrosecondsENSt6chrono12microsecondsE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Wait for a specific number of microseconds. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>microseconds</strong> – The number of microseconds to wait. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface17SetClockFrequencyE8uint32_t">
+<span id="_CPPv3N7Novelda13ChipInterface17SetClockFrequencyE8uint32_t"></span><span id="_CPPv2N7Novelda13ChipInterface17SetClockFrequencyE8uint32_t"></span><span id="Novelda::ChipInterface::SetClockFrequency__uint32_t"></span><span class="target" id="classNovelda_1_1ChipInterface_1ac5488d97a9ff2d665070690c9b804630"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetClockFrequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">newClock</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface17SetClockFrequencyE8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set the clock frequency for the interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>newClock</strong> – The new clock frequency in Hz. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda13ChipInterface17GetClockFrequencyEv">
+<span id="_CPPv3NK7Novelda13ChipInterface17GetClockFrequencyEv"></span><span id="_CPPv2NK7Novelda13ChipInterface17GetClockFrequencyEv"></span><span id="Novelda::ChipInterface::GetClockFrequencyC"></span><span class="target" id="classNovelda_1_1ChipInterface_1a9105ec0111db14b035b97e7f6c133cb0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetClockFrequency</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda13ChipInterface17GetClockFrequencyEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the clock frequency for the interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The clock frequency in Hz. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface8TransferEPK7uint8_t6size_tP7uint8_t6size_t">
+<span id="_CPPv3N7Novelda13ChipInterface8TransferEPK7uint8_t6size_tP7uint8_t6size_t"></span><span id="_CPPv2N7Novelda13ChipInterface8TransferEPK7uint8_t6size_tP7uint8_t6size_t"></span><span id="Novelda::ChipInterface::Transfer__uint8_tCP.s.uint8_tP.s"></span><span class="target" id="classNovelda_1_1ChipInterface_1ac5d0b3d0560c153cb687062e43d89e57"></span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Transfer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">wdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">wlength</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rlength</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface8TransferEPK7uint8_t6size_tP7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Transfer data to and from the chip. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wdata</strong> – Pointer to the buffer containing data to write. </p></li>
+<li><p><strong>wlength</strong> – Number of bytes to write. </p></li>
+<li><p><strong>rdata</strong> – Pointer to the buffer where incoming data should be stored. </p></li>
+<li><p><strong>rlength</strong> – Number of bytes to read. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface4ReadEP7uint8_t6size_t">
+<span id="_CPPv3N7Novelda13ChipInterface4ReadEP7uint8_t6size_t"></span><span id="_CPPv2N7Novelda13ChipInterface4ReadEP7uint8_t6size_t"></span><span id="Novelda::ChipInterface::Read__uint8_tP.s"></span><span class="target" id="classNovelda_1_1ChipInterface_1a4efcbc38e0a6055e60eeb1027d87cf9b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">rdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">rlength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface4ReadEP7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Read data from the chip. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a convenience function that calls <a class="reference internal" href="#classNovelda_1_1ChipInterface_1ac5d0b3d0560c153cb687062e43d89e57"><span class="std std-ref">Transfer()</span></a> with nullptr for wdata. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rdata</strong> – Pointer to the buffer where incoming data should be stored. </p></li>
+<li><p><strong>rlength</strong> – Number of bytes to read.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface5WriteEPK7uint8_t6size_t">
+<span id="_CPPv3N7Novelda13ChipInterface5WriteEPK7uint8_t6size_t"></span><span id="_CPPv2N7Novelda13ChipInterface5WriteEPK7uint8_t6size_t"></span><span id="Novelda::ChipInterface::Write__uint8_tCP.s"></span><span class="target" id="classNovelda_1_1ChipInterface_1a2c648560c67545fcff3290bda233b2ce"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">wdata</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">wlength</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface5WriteEPK7uint8_t6size_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Write data to the chip. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a convenience function that calls <a class="reference internal" href="#classNovelda_1_1ChipInterface_1ac5d0b3d0560c153cb687062e43d89e57"><span class="std std-ref">Transfer()</span></a> with nullptr for rdata. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wdata</strong> – Pointer to the buffer containing data to write. </p></li>
+<li><p><strong>wlength</strong> – Number of bytes to write.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda13ChipInterface17GetConnectionTypeEv">
+<span id="_CPPv3NK7Novelda13ChipInterface17GetConnectionTypeEv"></span><span id="_CPPv2NK7Novelda13ChipInterface17GetConnectionTypeEv"></span><span id="Novelda::ChipInterface::GetConnectionTypeC"></span><span class="target" id="classNovelda_1_1ChipInterface_1a7067b986266b73cd069b2d6b425dea8e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface14ConnectionTypeE" title="Novelda::ChipInterface::ConnectionType"><span class="n"><span class="pre">ConnectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GetConnectionType</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda13ChipInterface17GetConnectionTypeEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the type of connection to the radar chip. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The connection type. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda13ChipInterface20GetInterruptCallbackEv">
+<span id="_CPPv3NK7Novelda13ChipInterface20GetInterruptCallbackEv"></span><span id="_CPPv2NK7Novelda13ChipInterface20GetInterruptCallbackEv"></span><span id="Novelda::ChipInterface::GetInterruptCallbackC"></span><span class="target" id="classNovelda_1_1ChipInterface_1a1af7ab6e4d97ba59445c9060f1e1115f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">GetInterruptCallback</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda13ChipInterface20GetInterruptCallbackEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the interrupt callback function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The interrupt callback function. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface20SetInterruptCallbackERKNSt8functionIFvvEEE">
+<span id="_CPPv3N7Novelda13ChipInterface20SetInterruptCallbackERKNSt8functionIFvvEEE"></span><span id="_CPPv2N7Novelda13ChipInterface20SetInterruptCallbackERKNSt8functionIFvvEEE"></span><span class="target" id="classNovelda_1_1ChipInterface_1ad28ff927dedaea8111103c84fefd8c10"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SetInterruptCallback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">callback</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface20SetInterruptCallbackERKNSt8functionIFvvEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Set an interrupt callback function to be called when an interrupt occurs. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> – The interrupt callback function. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-functions">Protected Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface20AdjustClockFrequencyE8uint32_t">
+<span id="_CPPv3N7Novelda13ChipInterface20AdjustClockFrequencyE8uint32_t"></span><span id="_CPPv2N7Novelda13ChipInterface20AdjustClockFrequencyE8uint32_t"></span><span id="Novelda::ChipInterface::AdjustClockFrequency__uint32_t"></span><span class="target" id="classNovelda_1_1ChipInterface_1a08c3467245ede3e36ff375f6a3b01cfc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">virtual</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">AdjustClockFrequency</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">requestedFrequency</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface20AdjustClockFrequencyE8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Can be used to adjust the clock frequency to a value supported by the specific interface, it also works as a way the interface can trigger other actions when the clock frequency is changed. </p>
+<p>Calling SetClockFrequency will call this function with the requested frequency, and the returned value will be the actual frequency used. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface15clockFrequency_E">
+<span id="_CPPv3N7Novelda13ChipInterface15clockFrequency_E"></span><span id="_CPPv2N7Novelda13ChipInterface15clockFrequency_E"></span><span id="Novelda::ChipInterface::clockFrequency___uint32_t"></span><span class="target" id="classNovelda_1_1ChipInterface_1a7d7928e9fc35031cb0ed3ca59f993132"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clockFrequency_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface15clockFrequency_E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface15connectionType_E">
+<span id="_CPPv3N7Novelda13ChipInterface15connectionType_E"></span><span id="_CPPv2N7Novelda13ChipInterface15connectionType_E"></span><span id="Novelda::ChipInterface::connectionType___ConnectionType"></span><span class="target" id="classNovelda_1_1ChipInterface_1a1e199c9a7ff11349c53e5ca7867b1572"></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterface14ConnectionTypeE" title="Novelda::ChipInterface::ConnectionType"><span class="n"><span class="pre">ConnectionType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connectionType_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface15connectionType_E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface18interruptCallback_E">
+<span id="_CPPv3N7Novelda13ChipInterface18interruptCallback_E"></span><span id="_CPPv2N7Novelda13ChipInterface18interruptCallback_E"></span><span class="target" id="classNovelda_1_1ChipInterface_1aadbdaadf46ca9f153390ea42e9f0d044"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">void</span></span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">interruptCallback_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface18interruptCallback_E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda13ChipInterface10IdentifierE">
+<span id="_CPPv3N7Novelda13ChipInterface10IdentifierE"></span><span id="_CPPv2N7Novelda13ChipInterface10IdentifierE"></span><span id="Novelda::ChipInterface::Identifier"></span><span class="target" id="classNovelda_1_1ChipInterface_1_1Identifier"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Identifier</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda13ChipInterface10IdentifierE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p><a class="reference internal" href="#classNovelda_1_1ChipInterface_1_1Identifier"><span class="std std-ref">Identifier</span></a> (ID) for one <a class="reference internal" href="#classNovelda_1_1ChipInterface"><span class="std std-ref">ChipInterface</span></a>. </p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLineE">
+<span id="_CPPv3N7Novelda8GpioLineE"></span><span id="_CPPv2N7Novelda8GpioLineE"></span><span id="Novelda::GpioLine"></span><span class="target" id="classNovelda_1_1GpioLine"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GpioLine</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLineE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Represents a GPIO line on a device. </p>
+<p>A GPIO line is identified by a device and an offset. Note the special value <a class="reference internal" href="#classNovelda_1_1GpioLine_1acd5ade2d7e1d73157b71d383031037b8"><span class="std std-ref">GPIO_OFF</span></a> for the offset which can be used to indicate that the line is not used. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringE">
+<span id="_CPPv3N7Novelda8GpioLine8GpioLineENSt6stringE"></span><span id="_CPPv2N7Novelda8GpioLine8GpioLineENSt6stringE"></span><span id="Novelda::GpioLine::GpioLine__ss"></span><span class="target" id="classNovelda_1_1GpioLine_1a9e9d9e73a7c95d499bb0b45b6d68d6e9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GpioLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lineStr</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="#classNovelda_1_1GpioLine"><span class="std std-ref">GpioLine</span></a> string constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lineStr</strong> – Accepts input on format “&lt;device&gt;:&lt;offset&gt;” </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringEj">
+<span id="_CPPv3N7Novelda8GpioLine8GpioLineENSt6stringEj"></span><span id="_CPPv2N7Novelda8GpioLine8GpioLineENSt6stringEj"></span><span id="Novelda::GpioLine::GpioLine__ss.unsigned-i"></span><span class="target" id="classNovelda_1_1GpioLine_1af812b2101560c73abb00ac04d188ee60"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GpioLine</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">device</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringEj" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="#classNovelda_1_1GpioLine"><span class="std std-ref">GpioLine</span></a> constructor. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>device</strong> – The gpio device for the specific line (e.g. “gpiochip0”) </p></li>
+<li><p><strong>offset</strong> – The line offset on the device </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine8GpioLineEj">
+<span id="_CPPv3N7Novelda8GpioLine8GpioLineEj"></span><span id="_CPPv2N7Novelda8GpioLine8GpioLineEj"></span><span id="Novelda::GpioLine::GpioLine__unsigned-i"></span><span class="target" id="classNovelda_1_1GpioLine_1a2b03556ea84f9574b62015ceb5a01b61"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GpioLine</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine8GpioLineEj" title="Link to this definition">#</a><br /></dt>
+<dd><p><a class="reference internal" href="#classNovelda_1_1GpioLine"><span class="std std-ref">GpioLine</span></a> offset constructor. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The device is assumed to be “gpiochip0”, if this might not be true use the constructors taking both device and offset. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>offset</strong> – The line offset on the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda8GpioLine7enabledEv">
+<span id="_CPPv3NK7Novelda8GpioLine7enabledEv"></span><span id="_CPPv2NK7Novelda8GpioLine7enabledEv"></span><span id="Novelda::GpioLine::enabledC"></span><span class="target" id="classNovelda_1_1GpioLine_1aab708cdb12b0565f400ac1d9768a2764"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">enabled</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda8GpioLine7enabledEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Check if line is enabled. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Line is unused/off if offset is set to GPIO_OFF </p>
+</div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda8GpioLine6deviceEv">
+<span id="_CPPv3NK7Novelda8GpioLine6deviceEv"></span><span id="_CPPv2NK7Novelda8GpioLine6deviceEv"></span><span id="Novelda::GpioLine::deviceC"></span><span class="target" id="classNovelda_1_1GpioLine_1a3bb66ae3579ef7d2ba26ba3ca7165541"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">device</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda8GpioLine6deviceEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the device for the line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The device for the line. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda8GpioLine6offsetEv">
+<span id="_CPPv3NK7Novelda8GpioLine6offsetEv"></span><span id="_CPPv2NK7Novelda8GpioLine6offsetEv"></span><span id="Novelda::GpioLine::offsetC"></span><span class="target" id="classNovelda_1_1GpioLine_1ac2c9dc04fdd300e9e1beaf66b07914e6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offset</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda8GpioLine6offsetEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the offset for the line. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The offset for the line. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine8GPIO_OFFE">
+<span id="_CPPv3N7Novelda8GpioLine8GPIO_OFFE"></span><span id="_CPPv2N7Novelda8GpioLine8GPIO_OFFE"></span><span id="Novelda::GpioLine::GPIO_OFF__unsigned-i"></span><span class="target" id="classNovelda_1_1GpioLine_1acd5ade2d7e1d73157b71d383031037b8"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GPIO_OFF</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">255</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine8GPIO_OFFE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Special value for the offset to indicate that the line is not used. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine7device_E">
+<span id="_CPPv3N7Novelda8GpioLine7device_E"></span><span id="_CPPv2N7Novelda8GpioLine7device_E"></span><span id="Novelda::GpioLine::device___ss"></span><span class="target" id="classNovelda_1_1GpioLine_1acff9c1567f71b80bfb23ce1fde193f6d"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">device_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine7device_E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda8GpioLine7offset_E">
+<span id="_CPPv3N7Novelda8GpioLine7offset_E"></span><span id="_CPPv2N7Novelda8GpioLine7offset_E"></span><span id="Novelda::GpioLine::offset___unsigned-i"></span><span class="target" id="classNovelda_1_1GpioLine_1aa97717ef739e2ec5059b4d18412e290f"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">offset_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda8GpioLine7offset_E" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda12GpioSettingsE">
+<span id="_CPPv3N7Novelda12GpioSettingsE"></span><span id="_CPPv2N7Novelda12GpioSettingsE"></span><span id="Novelda::GpioSettings"></span><span class="target" id="structNovelda_1_1GpioSettings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GpioSettings</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda12GpioSettingsE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Represents the GPIO settings for a device. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda12GpioSettings11triggerEdgeE">
+<span id="_CPPv3N7Novelda12GpioSettings11triggerEdgeE"></span><span id="_CPPv2N7Novelda12GpioSettings11triggerEdgeE"></span><span id="Novelda::GpioSettings::triggerEdge__TriggerEdge"></span><span class="target" id="structNovelda_1_1GpioSettings_1a11989bb505ea46377485aeff4375441b"></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerEdgeE" title="Novelda::TriggerEdge"><span class="n"><span class="pre">TriggerEdge</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">triggerEdge</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerEdgeE" title="Novelda::TriggerEdge"><span class="n"><span class="pre">TriggerEdge</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerEdge6RisingE" title="Novelda::TriggerEdge::Rising"><span class="n"><span class="pre">Rising</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7Novelda12GpioSettings11triggerEdgeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The trigger edge for the GPIO interrupt. </p>
+<p>See <a class="reference internal" href="#ChipInterface_8h_1a27ef32b88d2e55753cf57a163499a819"><span class="std std-ref">TriggerEdge</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda12GpioSettings11triggerModeE">
+<span id="_CPPv3N7Novelda12GpioSettings11triggerModeE"></span><span id="_CPPv2N7Novelda12GpioSettings11triggerModeE"></span><span id="Novelda::GpioSettings::triggerMode__TriggerMode"></span><span class="target" id="structNovelda_1_1GpioSettings_1afbb0d211e91f04564c1b8d7573e11c54"></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerModeE" title="Novelda::TriggerMode"><span class="n"><span class="pre">TriggerMode</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">triggerMode</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerModeE" title="Novelda::TriggerMode"><span class="n"><span class="pre">TriggerMode</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda11TriggerMode7TriggerE" title="Novelda::TriggerMode::Trigger"><span class="n"><span class="pre">Trigger</span></span></a><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7Novelda12GpioSettings11triggerModeE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The trigger mode for the GPIO interrupt. </p>
+<p>See <a class="reference internal" href="#ChipInterface_8h_1a6f5b485664e6958ea947c5e5c9fbf653"><span class="std std-ref">TriggerMode</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda12GpioSettings10hostEnableE">
+<span id="_CPPv3N7Novelda12GpioSettings10hostEnableE"></span><span id="_CPPv2N7Novelda12GpioSettings10hostEnableE"></span><span id="Novelda::GpioSettings::hostEnable__GpioLine"></span><span class="target" id="structNovelda_1_1GpioSettings_1a501b76051e91f369024239950a0a384e"></span><a class="reference internal" href="#_CPPv4N7Novelda8GpioLineE" title="Novelda::GpioLine"><span class="n"><span class="pre">GpioLine</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hostEnable</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">22</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7Novelda12GpioSettings10hostEnableE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The GPIO line for the host enable signal. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda12GpioSettings7hostIrqE">
+<span id="_CPPv3N7Novelda12GpioSettings7hostIrqE"></span><span id="_CPPv2N7Novelda12GpioSettings7hostIrqE"></span><span id="Novelda::GpioSettings::hostIrq__GpioLine"></span><span class="target" id="structNovelda_1_1GpioSettings_1a87e1d6b63e8b37124c3399a0e0dc9201"></span><a class="reference internal" href="#_CPPv4N7Novelda8GpioLineE" title="Novelda::GpioLine"><span class="n"><span class="pre">GpioLine</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">hostIrq</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="m"><span class="pre">27</span></span><span class="p"><span class="pre">}</span></span><a class="headerlink" href="#_CPPv4N7Novelda12GpioSettings7hostIrqE" title="Link to this definition">#</a><br /></dt>
+<dd><p>The GPIO line for the host interrupt signal. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16I2cChipInterfaceE">
+<span id="_CPPv3N7Novelda16I2cChipInterfaceE"></span><span id="_CPPv2N7Novelda16I2cChipInterfaceE"></span><span id="Novelda::I2cChipInterface"></span><span class="target" id="classNovelda_1_1I2cChipInterface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I2cChipInterface</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47Novelda" title="Novelda"><span class="n"><span class="pre">Novelda</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><a class="headerlink" href="#_CPPv4N7Novelda16I2cChipInterfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Represents an I2C chip interface. </p>
+<p>The configuration consists of the <a class="reference internal" href="#structNovelda_1_1GpioSettings"><span class="std std-ref">GpioSettings</span></a> and the frequency in Hz and the slave address. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16I2cChipInterface16I2cChipInterfaceE8uint32_t7uint8_t12GpioSettings">
+<span id="_CPPv3N7Novelda16I2cChipInterface16I2cChipInterfaceE8uint32_t7uint8_t12GpioSettings"></span><span id="_CPPv2N7Novelda16I2cChipInterface16I2cChipInterfaceE8uint32_t7uint8_t12GpioSettings"></span><span id="Novelda::I2cChipInterface::I2cChipInterface__uint32_t.uint8_t.GpioSettings"></span><span class="target" id="classNovelda_1_1I2cChipInterface_1afecb3c27f5d99cd461078fe05d3bf538"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I2cChipInterface</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">slaveAddress</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">gpioSettings</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda16I2cChipInterface16I2cChipInterfaceE8uint32_t7uint8_t12GpioSettings" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor for the I2C chip interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frequencyHz</strong> – The I2C clock frequency. </p></li>
+<li><p><strong>slaveAddress</strong> – The address of the X4/X7 chip. </p></li>
+<li><p><strong>gpioSettings</strong> – The GPIO settings. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16I2cChipInterface13gpioSettings_E">
+<span id="_CPPv3N7Novelda16I2cChipInterface13gpioSettings_E"></span><span id="_CPPv2N7Novelda16I2cChipInterface13gpioSettings_E"></span><span id="Novelda::I2cChipInterface::gpioSettings___GpioSettingsC"></span><span class="target" id="classNovelda_1_1I2cChipInterface_1a841baf71b2fd84e1a33771dbd4d9ceb1"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpioSettings_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda16I2cChipInterface13gpioSettings_E" title="Link to this definition">#</a><br /></dt>
+<dd><p>GPIO settings for the I2C interface. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16I2cChipInterface13slaveAddress_E">
+<span id="_CPPv3N7Novelda16I2cChipInterface13slaveAddress_E"></span><span id="_CPPv2N7Novelda16I2cChipInterface13slaveAddress_E"></span><span id="Novelda::I2cChipInterface::slaveAddress___uint8_t"></span><span class="target" id="classNovelda_1_1I2cChipInterface_1a0b2037cc2c1f1326c794e3952a926469"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">slaveAddress_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda16I2cChipInterface13slaveAddress_E" title="Link to this definition">#</a><br /></dt>
+<dd><p>Slave address for the I2C interface. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16SpiChipInterfaceE">
+<span id="_CPPv3N7Novelda16SpiChipInterfaceE"></span><span id="_CPPv2N7Novelda16SpiChipInterfaceE"></span><span id="Novelda::SpiChipInterface"></span><span class="target" id="classNovelda_1_1SpiChipInterface"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpiChipInterface</span></span></span><span class="w"> </span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="k"><span class="pre">public</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47Novelda" title="Novelda"><span class="n"><span class="pre">Novelda</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N7Novelda13ChipInterfaceE" title="Novelda::ChipInterface"><span class="n"><span class="pre">ChipInterface</span></span></a><a class="headerlink" href="#_CPPv4N7Novelda16SpiChipInterfaceE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Represents a SPI chip interface. </p>
+<p>The configuration consists of the <a class="reference internal" href="#structNovelda_1_1SpiSettings"><span class="std std-ref">SpiSettings</span></a> and the <a class="reference internal" href="#structNovelda_1_1GpioSettings"><span class="std std-ref">GpioSettings</span></a> and the frequency in Hz. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16SpiChipInterface16SpiChipInterfaceE11SpiSettings12GpioSettings8uint32_t">
+<span id="_CPPv3N7Novelda16SpiChipInterface16SpiChipInterfaceE11SpiSettings12GpioSettings8uint32_t"></span><span id="_CPPv2N7Novelda16SpiChipInterface16SpiChipInterfaceE11SpiSettings12GpioSettings8uint32_t"></span><span id="Novelda::SpiChipInterface::SpiChipInterface__SpiSettings.GpioSettings.uint32_t"></span><span class="target" id="classNovelda_1_1SpiChipInterface_1aa106407cacb5f222d40c195fbf3ef5f2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpiChipInterface</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7Novelda11SpiSettingsE" title="Novelda::SpiSettings"><span class="n"><span class="pre">SpiSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">spiSettings</span></span>, <a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">gpioSettings</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">frequencyHz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Novelda16SpiChipInterface16SpiChipInterfaceE11SpiSettings12GpioSettings8uint32_t" title="Link to this definition">#</a><br /></dt>
+<dd><p>Constructor for the SPI chip interface. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spiSettings</strong> – The SPI settings. </p></li>
+<li><p><strong>gpioSettings</strong> – The GPIO settings. </p></li>
+<li><p><strong>frequencyHz</strong> – The SPI clock frequency. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7Novelda16SpiChipInterface14GetSpiSettingsEv">
+<span id="_CPPv3NK7Novelda16SpiChipInterface14GetSpiSettingsEv"></span><span id="_CPPv2NK7Novelda16SpiChipInterface14GetSpiSettingsEv"></span><span id="Novelda::SpiChipInterface::GetSpiSettingsC"></span><span class="target" id="classNovelda_1_1SpiChipInterface_1adf0515977a85cdd2ee408803f781b329"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Novelda11SpiSettingsE" title="Novelda::SpiSettings"><span class="n"><span class="pre">SpiSettings</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">GetSpiSettings</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7Novelda16SpiChipInterface14GetSpiSettingsEv" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the SPI settings for the chip interface. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-protected-attributes">Protected Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16SpiChipInterface12spiSettings_E">
+<span id="_CPPv3N7Novelda16SpiChipInterface12spiSettings_E"></span><span id="_CPPv2N7Novelda16SpiChipInterface12spiSettings_E"></span><span id="Novelda::SpiChipInterface::spiSettings___SpiSettings"></span><span class="target" id="classNovelda_1_1SpiChipInterface_1a3c2de7a0e423dad875b8039c98434534"></span><a class="reference internal" href="#_CPPv4N7Novelda11SpiSettingsE" title="Novelda::SpiSettings"><span class="n"><span class="pre">SpiSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spiSettings_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda16SpiChipInterface12spiSettings_E" title="Link to this definition">#</a><br /></dt>
+<dd><p>SPI settings for the SPI interface. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda16SpiChipInterface13gpioSettings_E">
+<span id="_CPPv3N7Novelda16SpiChipInterface13gpioSettings_E"></span><span id="_CPPv2N7Novelda16SpiChipInterface13gpioSettings_E"></span><span id="Novelda::SpiChipInterface::gpioSettings___GpioSettingsC"></span><span class="target" id="classNovelda_1_1SpiChipInterface_1af620cfdbff9f83af8246152a72af03d3"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N7Novelda12GpioSettingsE" title="Novelda::GpioSettings"><span class="n"><span class="pre">GpioSettings</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">gpioSettings_</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda16SpiChipInterface13gpioSettings_E" title="Link to this definition">#</a><br /></dt>
+<dd><p>GPIO settings for the SPI interface. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11SpiSettingsE">
+<span id="_CPPv3N7Novelda11SpiSettingsE"></span><span id="_CPPv2N7Novelda11SpiSettingsE"></span><span id="Novelda::SpiSettings"></span><span class="target" id="structNovelda_1_1SpiSettings"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">SpiSettings</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11SpiSettingsE" title="Link to this definition">#</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;ChipInterface.h&gt;</em></div>
+<p>Represents the SPI settings for a device. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11SpiSettings13clockPolarityE">
+<span id="_CPPv3N7Novelda11SpiSettings13clockPolarityE"></span><span id="_CPPv2N7Novelda11SpiSettings13clockPolarityE"></span><span id="Novelda::SpiSettings::clockPolarity__ClockPolarity"></span><span class="target" id="structNovelda_1_1SpiSettings_1ac0e23f15d3a844fc181a1c20d9368454"></span><a class="reference internal" href="#_CPPv4N7Novelda13ClockPolarityE" title="Novelda::ClockPolarity"><span class="n"><span class="pre">ClockPolarity</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clockPolarity</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11SpiSettings13clockPolarityE" title="Link to this definition">#</a><br /></dt>
+<dd><p>CPOL. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11SpiSettings10clockPhaseE">
+<span id="_CPPv3N7Novelda11SpiSettings10clockPhaseE"></span><span id="_CPPv2N7Novelda11SpiSettings10clockPhaseE"></span><span id="Novelda::SpiSettings::clockPhase__ClockPhase"></span><span class="target" id="structNovelda_1_1SpiSettings_1a3e702a5f83f7d0ddc077b4a2c7df82b7"></span><a class="reference internal" href="#_CPPv4N7Novelda10ClockPhaseE" title="Novelda::ClockPhase"><span class="n"><span class="pre">ClockPhase</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">clockPhase</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11SpiSettings10clockPhaseE" title="Link to this definition">#</a><br /></dt>
+<dd><p>CPHA. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11SpiSettings8bitOrderE">
+<span id="_CPPv3N7Novelda11SpiSettings8bitOrderE"></span><span id="_CPPv2N7Novelda11SpiSettings8bitOrderE"></span><span id="Novelda::SpiSettings::bitOrder__BitOrder"></span><span class="target" id="structNovelda_1_1SpiSettings_1aa411cf38edc346b0c542e1c34a647bb7"></span><a class="reference internal" href="#_CPPv4N7Novelda8BitOrderE" title="Novelda::BitOrder"><span class="n"><span class="pre">BitOrder</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">bitOrder</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11SpiSettings8bitOrderE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Bit order. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7Novelda11SpiSettings13spiLineNumberE">
+<span id="_CPPv3N7Novelda11SpiSettings13spiLineNumberE"></span><span id="_CPPv2N7Novelda11SpiSettings13spiLineNumberE"></span><span id="Novelda::SpiSettings::spiLineNumber__SpiLineNumber"></span><span class="target" id="structNovelda_1_1SpiSettings_1a18069c454e607a7502f5cc9bf4552c39"></span><a class="reference internal" href="#_CPPv4N7Novelda13SpiLineNumberE" title="Novelda::SpiLineNumber"><span class="n"><span class="pre">SpiLineNumber</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">spiLineNumber</span></span></span><a class="headerlink" href="#_CPPv4N7Novelda11SpiSettings13spiLineNumberE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Number of data lines. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv429get_ft4222_host_interface_idsP7int32_t"><code class="docutils literal notranslate"><span class="pre">get_ft4222_host_interface_ids()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv430free_ft4222_host_interface_idsP8uint32_t"><code class="docutils literal notranslate"><span class="pre">free_ft4222_host_interface_ids()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv47Novelda"><code class="docutils literal notranslate"><span class="pre">Novelda</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13SpiLineNumberE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiLineNumber</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13SpiLineNumber3SpiE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiLineNumber::Spi</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13SpiLineNumber4DSpiE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiLineNumber::DSpi</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13SpiLineNumber4QSpiE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiLineNumber::QSpi</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ClockPolarityE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPolarity</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ClockPolarity3LowE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPolarity::Low</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ClockPolarity4HighE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPolarity::High</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda10ClockPhaseE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPhase</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda10ClockPhase7LeadingE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPhase::Leading</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda10ClockPhase8TrailingE"><code class="docutils literal notranslate"><span class="pre">Novelda::ClockPhase::Trailing</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8BitOrderE"><code class="docutils literal notranslate"><span class="pre">Novelda::BitOrder</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8BitOrder3MSBE"><code class="docutils literal notranslate"><span class="pre">Novelda::BitOrder::MSB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8BitOrder3LSBE"><code class="docutils literal notranslate"><span class="pre">Novelda::BitOrder::LSB</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerEdgeE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerEdge</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerEdge6RisingE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerEdge::Rising</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerEdge7FallingE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerEdge::Falling</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerModeE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerMode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerMode10ContinuousE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerMode::Continuous</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11TriggerMode7TriggerE"><code class="docutils literal notranslate"><span class="pre">Novelda::TriggerMode::Trigger</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateI2cChipInterfaceENSt10unique_ptrI16I2cChipInterfaceEE8uint32_t7uint8_t12GpioSettingsN13ChipInterface10IdentifierE"><code class="docutils literal notranslate"><span class="pre">Novelda::CreateI2cChipInterface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I_N13ChipInterface13InterfaceTypeEEN7Novelda22CreateSpiChipInterfaceENSt10unique_ptrI16SpiChipInterfaceEE11SpiSettings12GpioSettings8uint32_tN13ChipInterface10IdentifierE"><code class="docutils literal notranslate"><span class="pre">Novelda::CreateSpiChipInterface()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda21reverse_bits_per_byteE8uint32_t"><code class="docutils literal notranslate"><span class="pre">Novelda::reverse_bits_per_byte()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4I0EN7Novelda21reverse_bits_per_byteEvP1T6size_t"><code class="docutils literal notranslate"><span class="pre">Novelda::reverse_bits_per_byte()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda7wait_usENSt6chrono12microsecondsE"><code class="docutils literal notranslate"><span class="pre">Novelda::wait_us()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterfaceE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14ConnectionTypeE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ConnectionType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3I2cE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ConnectionType::I2c</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3I3cE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ConnectionType::I3c</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14ConnectionType3SpiE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ConnectionType::Spi</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13InterfaceTypeE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterfaceType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType11LinuxNativeE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterfaceType::LinuxNative</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType6Ft4222E"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterfaceType::Ft4222</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13InterfaceType9BareMetalE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterfaceType::BareMetal</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14InterruptStateE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterruptState</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14InterruptState8AssertedE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterruptState::Asserted</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14InterruptState10DeassertedE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::InterruptState::Deasserted</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13ChipInterfaceE14ConnectionType8uint32_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ChipInterface()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface13ChipInterfaceERK13ChipInterface"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::ChipInterface()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterfaceaSERK13ChipInterface"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::operator=()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterfaceD0Ev"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::~ChipInterface()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface14SetChipEnabledEb"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::SetChipEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface19GetTimeMicrosecondsEPNSt6chrono12microsecondsE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::GetTimeMicroseconds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface17GetInterruptStateEv"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::GetInterruptState()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface16WaitForInterruptENSt6chrono12microsecondsE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::WaitForInterrupt()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface16WaitMicrosecondsENSt6chrono12microsecondsE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::WaitMicroseconds()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface17SetClockFrequencyE8uint32_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::SetClockFrequency()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda13ChipInterface17GetClockFrequencyEv"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::GetClockFrequency()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface8TransferEPK7uint8_t6size_tP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::Transfer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface4ReadEP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::Read()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface5WriteEPK7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::Write()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda13ChipInterface17GetConnectionTypeEv"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::GetConnectionType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda13ChipInterface20GetInterruptCallbackEv"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::GetInterruptCallback()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface20SetInterruptCallbackERKNSt8functionIFvvEEE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::SetInterruptCallback()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface20AdjustClockFrequencyE8uint32_t"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::AdjustClockFrequency()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface15clockFrequency_E"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::clockFrequency_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface15connectionType_E"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::connectionType_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface18interruptCallback_E"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::interruptCallback_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda13ChipInterface10IdentifierE"><code class="docutils literal notranslate"><span class="pre">Novelda::ChipInterface::Identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLineE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::GpioLine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine8GpioLineENSt6stringEj"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::GpioLine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine8GpioLineEj"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::GpioLine()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda8GpioLine7enabledEv"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::enabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda8GpioLine6deviceEv"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::device()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda8GpioLine6offsetEv"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::offset()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine8GPIO_OFFE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::GPIO_OFF</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine7device_E"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::device_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda8GpioLine7offset_E"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioLine::offset_</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda12GpioSettingsE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioSettings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda12GpioSettings11triggerEdgeE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioSettings::triggerEdge</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda12GpioSettings11triggerModeE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioSettings::triggerMode</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda12GpioSettings10hostEnableE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioSettings::hostEnable</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda12GpioSettings7hostIrqE"><code class="docutils literal notranslate"><span class="pre">Novelda::GpioSettings::hostIrq</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16I2cChipInterfaceE"><code class="docutils literal notranslate"><span class="pre">Novelda::I2cChipInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16I2cChipInterface16I2cChipInterfaceE8uint32_t7uint8_t12GpioSettings"><code class="docutils literal notranslate"><span class="pre">Novelda::I2cChipInterface::I2cChipInterface()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16I2cChipInterface13gpioSettings_E"><code class="docutils literal notranslate"><span class="pre">Novelda::I2cChipInterface::gpioSettings_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16I2cChipInterface13slaveAddress_E"><code class="docutils literal notranslate"><span class="pre">Novelda::I2cChipInterface::slaveAddress_</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16SpiChipInterfaceE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiChipInterface</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16SpiChipInterface16SpiChipInterfaceE11SpiSettings12GpioSettings8uint32_t"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiChipInterface::SpiChipInterface()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK7Novelda16SpiChipInterface14GetSpiSettingsEv"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiChipInterface::GetSpiSettings()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16SpiChipInterface12spiSettings_E"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiChipInterface::spiSettings_</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda16SpiChipInterface13gpioSettings_E"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiChipInterface::gpioSettings_</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11SpiSettingsE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiSettings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11SpiSettings13clockPolarityE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiSettings::clockPolarity</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11SpiSettings10clockPhaseE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiSettings::clockPhase</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11SpiSettings8bitOrderE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiSettings::bitOrder</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N7Novelda11SpiSettings13spiLineNumberE"><code class="docutils literal notranslate"><span class="pre">Novelda::SpiSettings::spiLineNumber</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, NOVELDA AS.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" sizes="192x192" href="../../_static/cropped-NOVELDA-icon-192x192.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="../../_static/cropped-NOVELDA-icon-32x32.png" type="image/png">
+    <title>Novelda examples for Nordic nRF52840DK / ESP32S3 &#8212; NOVELDA IC documentation 0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=b70b1b6f" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=8dde47fa"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Platform/zephyr/README_zephyr';</script>
+    <script src="../../_static/js/custom.js?v=bb7c8fd7"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Novelda examples for Windows / Linux / Raspberry Pi" href="../generic/README_generic.html" />
+    <link rel="prev" title="Novelda ULPP Presence 2D" href="../../Product/ULPP_Presence2D/ULPP_Presence2D_description.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../_static/Novelda_logo_hvit_72_dpi.png" class="logo__image only-dark" alt="NOVELDA"/>
+    <img src="../../_static/Novelda_logo_RGB_positiv_72_dpi.png" class="logo__image only-light pst-js-only" alt="NOVELDA"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../api-documentation/novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../README.html">
+    SDK Documentation - Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/RadarDirect/RadarDirect_description.html">
+    Novelda Radar Direct
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/ULPP_Presence1D/ULPP_Presence1D_description.html">
+    Novelda ULPP Presence 1D
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/ULPP_Presence2D/ULPP_Presence2D_description.html">
+    Novelda ULPP Presence 2D
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Novelda examples for Nordic nRF52840DK / ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../generic/README_generic.html">
+    Novelda examples for Windows / Linux / Raspberry Pi
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_chipinterface.html">
+    novelda_chipinterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/ChipInterface.html">
+    ChipInterface.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_platform_generic.html">
+    novelda_platform_generic.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/platform_zephyr_Regulatory.html">
+    platform_zephyr_Regulatory.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_RadarDirect.html">
+    novelda_RadarDirect.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_ULPP_Presence1D.html">
+    novelda_ULPP_Presence1D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_ULPP_Presence2D.html">
+    novelda_ULPP_Presence2D.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api-documentation/novelda_product.html">
+    novelda_product.h
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../esp/README_esp.html">
+    Novelda examples for ESP32S3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Product/Generator/Generator_description.html">
+    Novelda Generator
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/novelda" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/company/noveldaas" title="LinkedIn" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span></a>
+        </li>
+</ul></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Novelda examples for Nordic nRF52840DK / ESP32S3</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="novelda-examples-for-nordic-nrf52840dk-esp32s3">
+<h1>Novelda examples for Nordic nRF52840DK / ESP32S3<a class="headerlink" href="#novelda-examples-for-nordic-nrf52840dk-esp32s3" title="Link to this heading">#</a></h1>
+<p>The Novelda examples are made to be used with a Nordic nRF52840DK or a ESP32S3
+with a X7-shield connected.  It can either be flashed directly to the board with
+default settings or built with configured settings using zephyr. Both
+alternatives are described in this file.</p>
+<section id="using-pre-built-example-with-default-settings">
+<h2>Using pre-built example with default settings<a class="headerlink" href="#using-pre-built-example-with-default-settings" title="Link to this heading">#</a></h2>
+<p>A pre-built .hex-file is provided in one of the example folders. This can be
+directly flashed to the Nordic nRF52840DK board for easy evaluation. The
+pre-built file uses the default settings for the product. For information about
+these settings please check the product description.</p>
+<p>To flash the example to the Nordic board, use the following instructions
+(for Windows):</p>
+<ul class="simple">
+<li><p>Connect the board with the X7 shield attached to the computer via a USB-cable.
+Make sure that the board is switched on.</p></li>
+<li><p>A File Explorer window should open automatically in the JLINK drive.</p></li>
+<li><p>Drag and drop the pre-built .hex-file into the JLINK File Explorer window.</p></li>
+<li><p>See the output with a serial terminal, see hardware specific steps below.</p></li>
+</ul>
+</section>
+<section id="building-the-novelda-examples-using-zephyr">
+<h2>Building the Novelda examples using Zephyr:<a class="headerlink" href="#building-the-novelda-examples-using-zephyr" title="Link to this heading">#</a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<p>The following needs to be installed on the computer:</p>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://docs.zephyrproject.org/latest/develop/getting_started/index.html">Zephyr version &gt;=3.7.0</a></p>
+<ul>
+<li><p><strong>Note</strong>: After installing Chocolatey (for windows only), restart the
+computer to avoid problems with the next steps.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="instructions">
+<h3>Instructions<a class="headerlink" href="#instructions" title="Link to this heading">#</a></h3>
+<section id="nordic">
+<h4>Nordic<a class="headerlink" href="#nordic" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Install Nordic prerequisites:</p>
+<ul class="simple">
+<li><p>An ARM gcc &gt;=13 compiler for the target board: <a class="reference external" href="https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads">ARM gcc compiler</a></p></li>
+<li><p>Install <a class="reference external" href="https://www.nordicsemi.com/Products/Development-tools/nRF-Util">nRF Util</a> with ‘nrf5sdk-tools’ and ‘device’ components.</p></li>
+<li><p>Install <a class="reference external" href="https://docs.nordicsemi.com/bundle/nrfutil/page/guides/installing.html">nRF Util prerequisites</a> for your OS.</p></li>
+</ul>
+</li>
+<li><p>Set up the following environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ZEPHYR_BASE</span></code>: Path to your Zephyr installation
+(could look like this in Windows cmd: <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\zephyrproject\zephyr</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZEPHYR_TOOLCHAIN_VARIANT</span></code>: Set this to <code class="docutils literal notranslate"><span class="pre">gnuarmemb</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GNUARMEMB_TOOLCHAIN_PATH</span></code>: Path to the ARM compiler.</p></li>
+<li><p>In Path: Add the folder containing nrfutil</p></li>
+</ul>
+</li>
+<li><p>Open a terminal and navigate into one of the example folders such as
+“example\ULPP_Presence2D” in the unpacked archive.</p></li>
+<li><p>Run:
+<code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">build</span> <span class="pre">-b</span> <span class="pre">nrf52840dk/nrf52840</span> <span class="pre">--</span> <span class="pre">-DNOVELDA_FIRMWARE_HEADER=&lt;path_to_firmware_header&gt;</span></code>
+inside the example folder to build the example app. The CMake option
+<code class="docutils literal notranslate"><span class="pre">NOVELDA_FIRMWARE_HEADER</span></code> must point to the IC version for your hardware.
+e.g. “firmware_IC003.h” or “firmware_IC004.h”.</p></li>
+<li><p>Connect the Nordic nRF52840DK with the X7 Shield to the computer. Make sure
+that the board is switched on.</p>
+<ul class="simple">
+<li><p><strong>Note</strong>: The application does only work with the X7F202 sensor.</p></li>
+</ul>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">flash</span></code> to flash the app to the board.</p></li>
+<li><p>See the console outout with a serial terminal to watch the application
+running. More info <a class="reference external" href="https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_gsg_ses%2FUG%2Fgsg%2Fconnect_uart.html">here</a>.</p></li>
+</ol>
+</section>
+<section id="esp32s3">
+<h4>ESP32S3<a class="headerlink" href="#esp32s3" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Install the xtensa-espressif_esp32s3 compiler. Install the full version of the SDK from the
+<a class="reference external" href="https://github.com/zephyrproject-rtos/sdk-ng/releases/tag/v0.16.8">Zephyr SDK</a>. Install the xtensa-espressif_esp32s3 compiler using:
+<code class="docutils literal notranslate"><span class="pre">setup.cmd</span> <span class="pre">/t</span> <span class="pre">xtensa-espressif_esp32s3_zephyr-elf</span></code> from inside the downloaded SDK.</p></li>
+<li><p>Set up the following environment variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ZEPHYR_BASE</span></code>: Path to your Zephyr installation
+(could look like this in Windows cmd: <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%\zephyrproject\zephyr</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZEPHYR_TOOLCHAIN_VARIANT</span></code>: Set this to <code class="docutils literal notranslate"><span class="pre">zephyr</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ESPRESSIF_TOOLCHAIN_PATH</span></code>: Path to the xtensa compiler.
+(could look like this in Windows cmd: %USERPROFILE%\zephyr-sdk-0.16.8\xtensa-espressif_esp32s3_zephyr-elf)</p></li>
+</ul>
+</li>
+<li><p>Open a terminal and navigate into one of the example folders such as
+“example\ULPP_Presence2D” in the unpacked archive.</p></li>
+<li><p>Run:
+<code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">build</span> <span class="pre">-b</span> <span class="pre">esp32s3_devkitc/esp32s3/procpu</span> <span class="pre">--</span> <span class="pre">-DNOVELDA_FIRMWARE_HEADER=&lt;path_to_firmware_header&gt;</span></code>
+inside the example folder to build the example app. The CMake option
+<code class="docutils literal notranslate"><span class="pre">NOVELDA_FIRMWARE_HEADER</span></code> must point to the IC version for your hardware.
+e.g. “firmware_IC003.h” or “firmware_IC004.h”.</p></li>
+<li><p>Connect the ESP32S3 with the X7 Shield to the computer. Make sure
+that the board is switched on.</p>
+<ul class="simple">
+<li><p><strong>Note</strong>: The application does only work with the X7F202 sensor.</p></li>
+</ul>
+</li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">flash</span></code> to flash the app to the board.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">espressif</span> <span class="pre">monitor</span></code> to see the console output.</p></li>
+</ol>
+</section>
+<section id="porting-to-other-boards">
+<h4>Porting to other boards<a class="headerlink" href="#porting-to-other-boards" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Check that the MCU is compatible with the pre-built libraries.</p></li>
+<li><p>Create an overlay file for the new, zephyr supported, development board in
+the boards folder. Filename format: <boardname>_&lt;zephyr_qualifiers&gt;.overlay
+See: <a class="reference external" href="https://docs.zephyrproject.org/latest/build/dts/howtos.html#set-devicetree-overlays">set devicetree overlays</a>.</p></li>
+<li><p>Define the following aliases for the nodes and pins you want to use for
+connections:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">novelda</span><span class="o">-</span><span class="n">radar</span><span class="o">-</span><span class="n">spi</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">spi2</span><span class="p">;</span>
+<span class="n">novelda</span><span class="o">-</span><span class="n">radar</span><span class="o">-</span><span class="n">en</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">enable0</span><span class="p">;</span>
+<span class="n">novelda</span><span class="o">-</span><span class="n">radar</span><span class="o">-</span><span class="n">cs</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">cs0</span><span class="p">;</span>
+<span class="n">novelda</span><span class="o">-</span><span class="n">radar</span><span class="o">-</span><span class="n">irq</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">irq0</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Select the board when building. e.g.
+<code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">build</span> <span class="pre">-b</span> <span class="pre">&lt;boardname&gt;\&lt;zephyr\qualifiers&gt;</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="custom-chipinterface">
+<h3>Custom chipinterface<a class="headerlink" href="#custom-chipinterface" title="Link to this heading">#</a></h3>
+<p>By default the provided novelda_chipinterface_zephyr.c is used.</p>
+<p>If you need your own custom implementation you can look at
+the header novelda_chipinterface.h and the novelda_chipinterface_stub.c
+and replace the stubs with your own implementation.</p>
+<p>You can build with the custom stub implementation instead of the default one with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">build</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">board</span><span class="o">&gt;</span> <span class="o">--</span> <span class="o">-</span><span class="n">DCUSTOM_CHIPINTERFACE</span><span class="o">=</span><span class="n">ON</span>
+</pre></div>
+</div>
+<p>or point to a specific implementation using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">west</span> <span class="n">build</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">board</span><span class="o">&gt;</span> <span class="o">--</span> <span class="o">-</span><span class="n">DCUSTOM_CHIPINTERFACE</span><span class="o">=</span><span class="n">ON</span> <span class="o">-</span><span class="n">DCUSTOM_CHIPINTERFACE_SRC</span><span class="o">=</span><span class="s2">&quot;/path/to/implementation.c&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="regulatory-test-app-for-nordic">
+<h3>Regulatory test app for Nordic<a class="headerlink" href="#regulatory-test-app-for-nordic" title="Link to this heading">#</a></h3>
+<p>Regulatory test app is available in example/RadarDirect/. Follow the Instruction/Nordic above.</p>
+<p>At build (step 5), run <code class="docutils literal notranslate"><span class="pre">west</span> <span class="pre">build</span> <span class="pre">-b</span> <span class="pre">nrf52840dk/nrf52840</span> <span class="pre">--</span> <span class="pre">-DNOVELDA_FIRMWARE_HEADER=&lt;path_to_firmware_header&gt;</span> <span class="pre">-DPRODUCT_VARIANT=Regulatory</span></code> instead.</p>
+<p>The app switch different regulatory test modes by button and led indicates selected mode.
+Open UART terminal (ex. Putty) with speed 115200.</p>
+<p>When the application is programmed, the sensor starts in <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation</span></code> mode.</p>
+<section id="regulatory-test-modes">
+<h4>Regulatory test modes<a class="headerlink" href="#regulatory-test-modes" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Test Mode</p></th>
+<th class="head"><p>LED1</p></th>
+<th class="head"><p>LED2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation</span></code></p></td>
+<td><p>ON</p></td>
+<td><p>ON: sensor is running, OFF: sensor is not running, Blink: sensor doesn’t stop</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Tx</span></code></p></td>
+<td><p>Blink-1</p></td>
+<td><p>ON: sensor is running, OFF: sensor is not running, Blink: sensor doesn’t stop</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Tx</span> <span class="pre">Digital</span></code></p></td>
+<td><p>Blink-2</p></td>
+<td><p>ON: sensor is running, OFF: sensor is not running, Blink: sensor doesn’t stop</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation,</span> <span class="pre">Tx</span> <span class="pre">off</span></code></p></td>
+<td><p>Blink-3</p></td>
+<td><p>ON: sensor is running, OFF: sensor is not running, Blink: sensor doesn’t stop</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">FCC</span> <span class="pre">10</span> <span class="pre">second</span> <span class="pre">rule</span> <span class="pre">test</span></code></p></td>
+<td><p>Blink-4</p></td>
+<td><p>ON: sensor is running, OFF: sensor is not running, Blink: sensor doesn’t stop</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="button1-button">
+<h4><em>BUTTON1</em> button<a class="headerlink" href="#button1-button" title="Link to this heading">#</a></h4>
+<p><em>BUTTON1</em> toggles modes. LED1 shows selected mode by blink. Sensor doesn’t start until pushing BUTTON2.
+It stops sensor if sensor is running, then LED2 turns OFF. If the app cannot stop sensor, then LED2 blinks.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Tx</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Tx</span> <span class="pre">Digital</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation,</span> <span class="pre">Tx</span> <span class="pre">off</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">FCC</span> <span class="pre">10</span> <span class="pre">second</span> <span class="pre">rule</span> <span class="pre">test</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Normal</span> <span class="pre">Operation</span></code> -&gt; …</p>
+</section>
+<section id="button2-button">
+<h4><em>BUTTON2</em> button<a class="headerlink" href="#button2-button" title="Link to this heading">#</a></h4>
+<p><em>BUTTON2</em> starts sensor. LED2 turns ON when sensor is running.</p>
+</section>
+<section id="button3-button">
+<h4><em>BUTTON3</em> button<a class="headerlink" href="#button3-button" title="Link to this heading">#</a></h4>
+<p><em>BUTTON3</em> only available on <code class="docutils literal notranslate"><span class="pre">FCC</span> <span class="pre">10</span> <span class="pre">second</span> <span class="pre">rule</span> <span class="pre">test</span></code> mode and sensor is running.
+<em>BUTTON3</em> toggles between receiver fault (rx_counter_lsb = 45) test phase and detection phase (rx_counter_lsb = 9).</p>
+</section>
+<section id="reset-button">
+<h4><em>RESET</em> button<a class="headerlink" href="#reset-button" title="Link to this heading">#</a></h4>
+<p><em>RESET</em> resets system. It can be used when LED2 blinks (sensor doesn’t stop).</p>
+<p>The application should output something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>*** Booting Zephyr OS build vX.X.X ***
+Start &quot;Normal Operation&quot; mode. Press Button-1 to toggle mode.
+[Button-1] Stop Sensor.
+Selected &quot;Tx&quot; mode. Press Button-2 to start sensor or Button-1 to toggle mode.
+[Button-2] Start Sensor.
+[Button-1] Stop Sensor.
+Selected &quot;Tx Digital&quot; mode. Press Button-2 to start sensor or Button-1 to toggle mode.
+[Button-2] Start Sensor.
+[Button-1] Stop Sensor.
+Selected &quot;Normal Operation Tx off&quot; mode. Press Button-2 to start sensor or Button-1 to toggle mode.
+[Button-2] Start Sensor.
+[Button-1] Stop Sensor.
+Selected &quot;FCC 10 second rule&quot; mode. Press Button-2 to start sensor or Button-1 to toggle mode.
+[Button-2] Start Sensor with Tx Power 3.
+[Button-3] Tx Power= 0. Press Button-3 to toggle Tx Power or Button-1 to toggle mode.
+[Button-1] Stop Sensor.
+Selected &quot;Normal Operation&quot; mode. Press Button-2 to start sensor or Button-1 to toggle mode.
+...
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pre-built-example-with-default-settings">Using pre-built example with default settings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-novelda-examples-using-zephyr">Building the Novelda examples using Zephyr:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nordic">Nordic</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#esp32s3">ESP32S3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#porting-to-other-boards">Porting to other boards</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-chipinterface">Custom chipinterface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-test-app-for-nordic">Regulatory test app for Nordic</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-test-modes">Regulatory test modes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#button1-button"><em>BUTTON1</em> button</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#button2-button"><em>BUTTON2</em> button</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#button3-button"><em>BUTTON3</em> button</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-button"><em>RESET</em> button</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, NOVELDA AS.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

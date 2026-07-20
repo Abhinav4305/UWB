@@ -1,0 +1,13 @@
+C:/RR_02/bin/libusb-1.0.dll
+C:/RR_02/bin/usbpp11.dll
+C:/RR_02/bin/LibFT4222-64.dll
+C:/RR_02/lib/ChipInterface.lib
+C:/RR_02/bin/ChipInterface.dll
+C:/RR_02/bin/SignalFlow.dll
+C:/RR_02/lib/novelda_RadarDirect.lib
+C:/RR_02/share/X7_Application_BA22_IC003_RadarDirect_config_6.11.5.app
+C:/RR_02/share/X7_Application_BA22_IC004_RadarDirect_config_6.11.5.app
+C:/RR_02/bin/novelda_signalflow_app_x7_RadarDirect.exe
+C:/RR_02/share/X7_Application_BA22_IC003_RadarDirect_config_6.11.5.app
+C:/RR_02/share/X7_Application_BA22_IC004_RadarDirect_config_6.11.5.app
+C:/RR_02/bin/novelda_signalflow_app_x7_RadarDirect_Playback.exe

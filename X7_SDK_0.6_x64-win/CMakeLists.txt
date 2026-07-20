@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.13)
+project(examples C CXX)
+
+file(GLOB EXAMPLE_DIRS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} example/*)
+foreach(EXAMPLE_DIR ${EXAMPLE_DIRS})
+    if(IS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${EXAMPLE_DIR})
+        message(STATUS "Adding example: ${EXAMPLE_DIR}")
+        add_subdirectory(${EXAMPLE_DIR})
+    endif()
+endforeach()
