@@ -29,30 +29,51 @@ def to_8channel_tensor(frames: np.ndarray) -> torch.Tensor:
     # frames shape: (64, 2, 2, 34) complex64 -> (Time, TX, RX, Bins)
     w = frames
     if w.shape[3] > 34: w = w[:, :, :, :34]
+    
     tx0_rx0 = w[:, 0, 0, :]
     tx0_rx1 = w[:, 0, 1, :]
     tx1_rx0 = w[:, 1, 0, :]
     tx1_rx1 = w[:, 1, 1, :]
     
-    # Stack into 8 channels: (8, 64, 34)
+def to_interferometry_tensor(w: np.ndarray) -> torch.Tensor:
+    # 1. MTI Filter
+    w_mti = w - np.mean(w, axis=0, keepdims=True)
+    
+    tx0_rx0 = w_mti[:, 0, 0, :]
+    tx1_rx0 = w_mti[:, 1, 0, :]
+    tx0_rx1 = w_mti[:, 0, 1, :]
+    
+    # Helper to calculate Unit Phasors (Continuous Phase without Amplitude Squaring)
+    def to_phasor(z1, z2):
+        interf = z1 * np.conj(z2)
+        return interf / (np.abs(interf) + 1e-9)
+        
+    # 2. Spatial Unit Phasors (Angle of Arrival)
+    H_phasor = to_phasor(tx0_rx0, tx1_rx0)
+    V_phasor = to_phasor(tx0_rx0, tx0_rx1)
+    
+    # 3. Temporal Unit Phasor (Doppler Velocity)
+    D_phasor = np.zeros_like(tx0_rx0, dtype=np.complex64)
+    D_phasor[1:] = to_phasor(tx0_rx0[1:], tx0_rx0[:-1])
+    
+    # 4. Amplitude Features
+    amp = np.mean(np.abs(w_mti), axis=(1, 2))
+    amp_norm = (amp - np.mean(amp)) / (np.std(amp) + 1e-9)
+    
+    amp_H_diff = np.abs(tx0_rx0) - np.abs(tx1_rx0)
+    amp_H_norm = amp_H_diff / (np.abs(tx0_rx0) + np.abs(tx1_rx0) + 1e-9)
+    
+    # Stack into 8 bounded, physically explicit channels
     stacked = np.stack([
-        np.real(tx0_rx0), np.imag(tx0_rx0),
-        np.real(tx0_rx1), np.imag(tx0_rx1),
-        np.real(tx1_rx0), np.imag(tx1_rx0),
-        np.real(tx1_rx1), np.imag(tx1_rx1)
+        amp_norm,
+        np.real(H_phasor), np.imag(H_phasor),
+        np.real(V_phasor), np.imag(V_phasor),
+        np.real(D_phasor), np.imag(D_phasor),
+        amp_H_norm
     ], axis=0)
     
-    # MTI Filter: Remove static background by subtracting the time-mean
-    time_mean = np.mean(stacked, axis=1, keepdims=True)
-    stacked = stacked - time_mean
-    
-    # Global Z-score normalization (Per-Window to prevent mode collapse!)
-    mean = np.mean(stacked)
-    std = np.std(stacked) + 1e-9
-    norm = (stacked - mean) / std
-    
-    # PyTorch expects (Channels, H, W) -> (8, 96, 64)
-    norm = np.transpose(norm, (0, 2, 1))
+    # PyTorch expects (Channels, H, W) -> (8, 34, 64)
+    norm = np.transpose(stacked, (0, 2, 1))
     return torch.from_numpy(norm).float()
 
 # ── DATASET ───────────────────────────────────────────────────────────────────
@@ -87,15 +108,10 @@ class X7GestureDatasetV2(Dataset):
     def __getitem__(self, idx):
         raw_original, label, sample_type = self.samples[idx]
         
-        # 1. TIME WARPING (Speed Variation)
-        # We stretch or compress the sequence by interpolating nearest neighbor frames
-        if self.augment and np.random.rand() > 0.3:
-            speed_factor = np.random.uniform(0.7, 1.3)
-            new_len = int(len(raw_original) * speed_factor)
-            indices = np.linspace(0, len(raw_original) - 1, new_len).astype(int)
-            raw = raw_original[indices]
-        else:
-            raw = raw_original
+        # 1. TIME WARPING (Removed)
+        # Nearest-neighbor interpolation drops frames and corrupts the continuous 
+        # phase sine-wave. Removed to prevent high-frequency noise injection.
+        raw = raw_original
 
         # Find peak energy
         frame_energy = np.sum(np.abs(raw), axis=(1, 2, 3))
@@ -133,13 +149,9 @@ class X7GestureDatasetV2(Dataset):
             scale = np.random.uniform(0.4, 2.0)
             window = window * scale
             
-            # 3. GLOBAL PHASE ROTATION
-            phase_shift = np.exp(1j * np.random.uniform(0, 2 * np.pi))
-            window = window * phase_shift
-            
             # 4. MICRO PHASE JITTER (per antenna)
-            # Simulates slight angle variations (size (1, 2, 2, 1) broadcasted over Time and Bins)
-            antenna_phase_jitter = np.exp(1j * np.random.normal(0, 0.2, size=(1, 2, 2, 1)))
+            # Simulates slight angle variations due to tiny positional shifts.
+            antenna_phase_jitter = np.exp(1j * np.random.normal(0, 0.1, size=(1, 2, 2, 1)))
             window = window * antenna_phase_jitter
             
             # 5. CHANNEL DROPOUT
@@ -153,7 +165,7 @@ class X7GestureDatasetV2(Dataset):
             noise = (np.random.randn(*window.shape) + 1j * np.random.randn(*window.shape)) * 0.1
             window = window + noise.astype(np.complex64)
             
-        return to_8channel_tensor(window), label
+        return to_interferometry_tensor(window), label
 
 # ── MODEL ─────────────────────────────────────────────────────────────────────
 class GestureCNN_X7_V2(nn.Module):
@@ -161,13 +173,15 @@ class GestureCNN_X7_V2(nn.Module):
         super().__init__()
         self.features = nn.Sequential(
             nn.Conv2d(8, 64, 3, padding=1), nn.BatchNorm2d(64), nn.ReLU(True), nn.MaxPool2d(2),
+            nn.Dropout2d(0.1),
             nn.Conv2d(64, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(True), nn.MaxPool2d(2),
+            nn.Dropout2d(0.1),
             nn.Conv2d(128, 256, 3, padding=1), nn.BatchNorm2d(256), nn.ReLU(True), nn.MaxPool2d(2),
             nn.Conv2d(256, 512, 3, padding=1), nn.BatchNorm2d(512), nn.ReLU(True),
             nn.AdaptiveAvgPool2d((4, 4)),
         )
         self.classifier = nn.Sequential(
-            nn.Flatten(), nn.Linear(512 * 16, 512), nn.ReLU(True), nn.Dropout(0.4),
+            nn.Flatten(), nn.Linear(512 * 16, 512), nn.ReLU(True), nn.Dropout(0.5),
             nn.Linear(512, 128), nn.ReLU(True), nn.Dropout(0.3), nn.Linear(128, n_classes),
         )
     def forward(self, x): return self.classifier(self.features(x))
@@ -191,7 +205,7 @@ def run(args):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = GestureCNN_X7_V2(n_classes=N_CLASSES).to(device)
     crit = torch.nn.CrossEntropyLoss(label_smoothing=0.1)
-    opt = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-4)
+    opt = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-3)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     
     try:
